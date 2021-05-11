@@ -1,0 +1,54 @@
+*{
+	font-family: 'Poppins', 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+html{
+	scroll-behavior: smooth;
+}
+
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+
+//==========GLOBAL CLASSES=============
+.vertical-flex-main-wrapper{
+	min-height: 100vh;
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+};
+
+.background-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	z-index: -1;
+	&__flex-element {
+		flex: 0 0 100%;
+		position: relative;
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+};
+
+
+//=====================================
+//==========RE-USIBLE CLASSES==========
+.flex-grow-1{
+	flex-grow: 1;
+}
+

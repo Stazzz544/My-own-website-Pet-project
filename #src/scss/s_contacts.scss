@@ -1,0 +1,148 @@
+.contacts {
+	display: none;
+	position: relative;
+	&__dark-filter{
+		background: rgba(0, 0, 0, 0.245);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	&__wrapper{
+		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__form {
+		position: relative;
+		margin: 100px 15px 0px 15px;
+		border: solid 1px #ffffff;
+		border-top: none;
+		padding: 30px;
+		&::after {
+			content:'';
+			height: 1px;
+			width: 133px;
+			top: 0;
+			right: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+		&::before{
+			content:'';
+			height: 1px;
+			width: 133px;
+			top: 0;
+			left: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+	}
+	&__form-title{
+		z-index: 100;
+		position: absolute;
+		top: -18px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: white;
+		font-size: 35px;
+		letter-spacing: 10px;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+	&__form-subtitle{
+		margin-top: 10px;
+		color: #ffffff;
+
+	}
+	&__input {
+		margin-top: 15px;
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		
+		input{
+			background: url('../img/contacts/background/1px.png') repeat;
+			border: 1px solid #ffffff;
+			padding: 10px 10px;
+			width: 330px;
+			color:#ffffff;
+			&::placeholder{
+				color:#ffffff7b;
+			}
+		}
+		label{
+			margin-left: 30px;
+			color: rgb(255, 255, 255);
+		}
+	}
+	&__textarea {
+		margin-top: 25px;
+		position: relative;
+		&::after {
+			content:'';
+			height: 0.5px;
+			width: 164px;
+			top: 0;
+			right: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+		&::before{
+			content:'';
+			height: 0.5px;
+			width: 164px;
+			top: 0;
+			left: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+		textarea{
+			background: url('../img/contacts/background/1px.png') repeat;
+			border: 1px solid #ffffff;
+			padding: 10px 10px;
+			resize: none;
+			width: 100%;
+			border-top: none;
+			color:#ffffff;
+			
+		}
+	}
+	&__textarea label{
+		color: #ffffff;
+		position: absolute;
+		white-space: nowrap;
+		left: 50%;
+		top: -7px;
+		transform: translateX(-50%);
+	}
+
+	&__triggers {
+		margin-top: 20px;
+		display: flex;
+	}
+
+	&__btn {
+		background: none;
+		border: 1px solid #ffffff;
+		color: #ffffff;
+		padding: 5px;
+		font-weight: 600;
+	}
+
+	&__policy {
+		margin-left: 40px;
+		max-width: 350px;
+		color: #ffffff;
+		display: flex;
+		align-items: center;
+		span{
+			margin-left: 20px;
+		}
+	}
+
+	&__policy-link {
+		color: #ffffff;
+	}
+}
+

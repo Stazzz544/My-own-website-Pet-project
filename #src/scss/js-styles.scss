@@ -1,0 +1,15 @@
+//==========JS CLASSES=============
+.section-active{
+	display: block;
+	animation: 1s fadeIn;
+	animation-fill-mode: forwards;
+};
+
+@keyframes fadeIn {
+	0% {
+	  opacity: 0;
+	};
+	100% {
+	  opacity: 1
+	};
+};

@@ -1,0 +1,26 @@
+.menu {
+	background-color:rgb(74, 74, 74);
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	
+	&__wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	&__navigation {
+		height: 50px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__navigation-item {
+	}
+
+	&__navigation-links {
+		color: #ffffff;
+	}
+}

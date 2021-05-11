@@ -1,0 +1,15 @@
+@import 'standart/reset.scss';
+@import 'standart/mixins.scss';
+@import 'standart/variables.scss';
+
+@import '#global';
+@import 'menu';
+@import 'footer';
+@import 'fonts';
+
+@import 's_promo';
+@import 's_sites';
+@import 's_contacts';
+
+
+@import 'js-styles'

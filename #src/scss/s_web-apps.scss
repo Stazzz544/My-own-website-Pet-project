@@ -1,0 +1,38 @@
+.web-apps{
+	display: none;
+	position: relative;
+	&__sidebar{
+		position: absolute;
+		width: 340px;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.694);
+		display: flex;
+		transform: translateX(-272px);
+		transition: all 1s;
+	}
+	&__sidebar_active{
+		transform: translateX(0px);
+	}
+	&__sidebar-menu{
+		flex: 80%;
+	}
+	&__sidebar-panel{
+		flex: 20%;
+		background-color: rgba(0, 0, 0, 0.319);
+		
+	}
+	&__sidebar-arrow {
+		margin-top: 20px;
+		width: 100%;
+		height: 50px;
+		mask: url('../img/web-apps/icon/right-arrow.svg') center no-repeat ;
+		background-color: rgba(255, 255, 255, 0.415);
+		cursor: pointer;
+		transition: all 1s;
+	}
+	&__sidebar-arrow_active {
+		transform: rotate(-180deg);
+	}
+	&__sidebar-arrow-img {
+	}
+}

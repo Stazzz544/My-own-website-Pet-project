@@ -46,7 +46,7 @@ testWebP(function (support) {
 // });
 
 
-
+/*
 const pages = document.querySelectorAll('section'),
 		links = document.querySelectorAll('.menu__navigation-item'),
 		promo = document.querySelector('#promo'),
@@ -69,3 +69,50 @@ function removeClass (array, itemNum) {							//получаем массив в
 		array[itemNum].classList.add('section-active');
 	});
 }
+*/
+
+
+//======== Menu tabs and links border bottum ========
+const menu = document.querySelector('.menu__navigation'),
+		menuLinks = document.querySelectorAll('.menu__navigation-link'),
+		sections = document.querySelectorAll('section');
+
+		menu.addEventListener('click', (e) => {
+			const target = e.target;
+			
+			if (target.classList.contains('menu__navigation-link')) {
+				menuLinks.forEach((e, i) => {
+					if (target === e ){
+					deleteActiveClasses ();
+					showPage (i);
+					addMenuActive(i);
+					}
+				});
+				
+			}
+		});
+
+function deleteActiveClasses () {
+	sections.forEach(item =>{
+		item.classList.remove('section-active');
+	});
+	menuLinks.forEach(item =>{
+		item.classList.remove('menu__navigation-link_active');
+	});
+}
+
+function showPage (numPage) {
+	sections[numPage].classList.add('section-active');
+}
+function addMenuActive (numMenuLinc) {
+	menuLinks[numMenuLinc].classList.add('menu__navigation-link_active');
+}
+
+//======== Sidebar ========
+const arrow = document.querySelector('.web-apps__sidebar-arrow'),
+		sidebar = document.querySelector('.web-apps__sidebar');
+
+		arrow.addEventListener('click', () => {
+			sidebar.classList.toggle('web-apps__sidebar_active');
+			arrow.classList.toggle('web-apps__sidebar-arrow_active');
+		});

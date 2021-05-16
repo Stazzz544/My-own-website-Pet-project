@@ -20,7 +20,30 @@
 	&__navigation-item {
 	}
 
-	&__navigation-links {
+	&__navigation-link {
 		color: #ffffff;
+		position: relative;
+		transition: all 1s;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 0;
+			height: 1px;
+			bottom: 0;
+			background: #ffffff;
+			width: 0%;
+		}
+		&:hover:before{
+			right: 0;
+			width: 100%;
+			transition: all 1s;
+		}
+		&_active{
+			&::before{
+				right: 0;
+				transition: all 1s;
+				width: 100%;
+			}
+		}
 	}
 }

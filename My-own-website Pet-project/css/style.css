@@ -179,8 +179,38 @@ html {
           align-items: center;
 }
 
-.menu__navigation-links {
+.menu__navigation-link {
   color: #ffffff;
+  position: relative;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.menu__navigation-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 1px;
+  bottom: 0;
+  background: #ffffff;
+  width: 0%;
+}
+
+.menu__navigation-link:hover:before {
+  right: 0;
+  width: 100%;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.menu__navigation-link_active::before {
+  right: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+  width: 100%;
 }
 
 .footer {
@@ -469,6 +499,65 @@ html {
 
 .contacts__policy-link {
   color: #ffffff;
+}
+
+.web-apps {
+  display: none;
+  position: relative;
+}
+
+.web-apps__sidebar {
+  position: absolute;
+  width: 340px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.694);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(-272px);
+      -ms-transform: translateX(-272px);
+          transform: translateX(-272px);
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.web-apps__sidebar_active {
+  -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.web-apps__sidebar-menu {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+}
+
+.web-apps__sidebar-panel {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  background-color: rgba(0, 0, 0, 0.319);
+}
+
+.web-apps__sidebar-arrow {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  -webkit-mask: url("../img/web-apps/icon/right-arrow.svg") center no-repeat;
+          mask: url("../img/web-apps/icon/right-arrow.svg") center no-repeat;
+  background-color: rgba(255, 255, 255, 0.415);
+  cursor: pointer;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.web-apps__sidebar-arrow_active {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 .section-active {

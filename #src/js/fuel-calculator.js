@@ -8,8 +8,7 @@ fuelCalculatorBtn.addEventListener('click', () => {
  		 fuelConsumption = document.querySelector('.fuel-calculator__fuel-consumption-enter').value,
 		 fuelPrice = document.querySelector('.fuel-calculator__fuel-price-enter').value,
 		 total = (distance / 100) * fuelConsumption * fuelPrice;
-		 console.log(typeof(total));
-		 console.log(total);
+		 result.style = 'padding: 15px 20px';
 		 if (isNaN(total)){
 			result.innerHTML =  `некорректный ввод`;
 		 } else {

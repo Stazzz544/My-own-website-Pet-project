@@ -1,7 +1,7 @@
 const bmiBtn = document.querySelector('.bmi-calculator__btn');
 
 bmiBtn.addEventListener('click', () => {
-	bmi ()
+	bmi ();
 });
 
 function bmi () {
@@ -27,4 +27,5 @@ function bmi () {
 	 } else{
 		answerField.innerHTML = `произошла ошибка`;
 	 }
+	 appWrapperSize (); // функция в главном документе
 }

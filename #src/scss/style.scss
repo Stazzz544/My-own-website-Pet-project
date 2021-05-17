@@ -2,15 +2,22 @@
 @import 'standart/mixins.scss';
 @import 'standart/variables.scss';
 
+//common classes
 @import '#global';
 @import 'menu';
 @import 'footer';
 @import 'fonts';
 
+//sections
 @import 's_promo';
 @import 's_sites';
 @import 's_contacts';
 @import 's_web-apps';
+
+//web apps styles
+@import 'apps/fuel-calculator';
+@import 'apps/body-mass';
+
 
 
 @import 'js-styles'

@@ -1,5 +1,52 @@
-@@include('fuel-calculator.js');
-@@include('body-mass.js');
+
+
+let fuelCalculatorBtn = document.querySelector('.fuel-calculator__btn');
+
+fuelCalculatorBtn.addEventListener('click', () => {
+	let result = document.querySelector('.fuel-calculator__result'),
+ 		 distance = document.querySelector('.fuel-calculator__distans-enter').value,
+ 		 fuelConsumption = document.querySelector('.fuel-calculator__fuel-consumption-enter').value,
+		 fuelPrice = document.querySelector('.fuel-calculator__fuel-price-enter').value,
+		 total = (distance / 100) * fuelConsumption * fuelPrice;
+		 console.log(typeof(total));
+		 console.log(total);
+		 if (isNaN(total)){
+			result.innerHTML =  `некорректный ввод`;
+		 } else {
+			result.innerHTML = ` цена топлива: ${+total.toFixed(2)} руб.`;
+		 }
+
+});;
+const bmiBtn = document.querySelector('.bmi-calculator__btn');
+
+bmiBtn.addEventListener('click', () => {
+	bmi ()
+});
+
+function bmi () {
+	let weight = document.querySelector('.bmi-calculator__weight').value,
+		 height = document.querySelector('.bmi-calculator__height').value,
+		 answerField = document.querySelector('.bmi-calculator__answer-field'),
+		 result;
+	answerField.style = 'padding: 15px'
+	result = (weight / (height/100)) / (height/100);
+	console.log(result);
+	if (isNaN(result)){
+		answerField.innerHTML =  `некорректный ввод`;
+	 } else if (result < 15.99 ){
+		answerField.innerHTML = ` Индекс массы тела равен : ${+result.toFixed(2)}<br> Выраженный дефицит массы тела	 <br>Необходима срочная консультация специалиста`;
+	 } else if (result > 16.00 &&  result < 18.49 ){
+		answerField.innerHTML = ` Индекс массы тела равен : ${+result.toFixed(2)}<br>	Недостаточная (дефицит) масса тела	<br>Необходима консультация специалиста`;
+	 } else if (result > 18.50 &&  result < 24.99){
+		answerField.innerHTML = ` Индекс массы тела равен : ${+result.toFixed(2)} <br> Ваш вес в норме!`;
+	 } else if (result > 25.00 &&  result < 29.99){
+		answerField.innerHTML = ` Индекс массы тела равен : ${+result.toFixed(2)} <br> Избыточная масса тела (предожирение)	<br>Необходима консультация специалиста`;
+	 } else if (result > 30.00 ){
+		answerField.innerHTML = ` Индекс массы тела равен : ${+result.toFixed(2)} <br> У вас ожирение	<br>Необходима консультация специалиста`;
+	 } else{
+		answerField.innerHTML = `произошла ошибка`;
+	 }
+};
 
 //функция для подключения webp
 function testWebP(callback) {

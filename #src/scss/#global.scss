@@ -1,5 +1,5 @@
 *{
-	font-family: 'Poppins', 'Montserrat', sans-serif;
+	font-family:  'Montserrat', sans-serif;
 	font-weight: 400;
 }
 html{
@@ -14,6 +14,8 @@ html{
 
 
 //==========GLOBAL CLASSES=============
+
+
 .vertical-flex-main-wrapper{
 	min-height: 100vh;
 	padding-top: 50px;
@@ -45,6 +47,19 @@ html{
 	}
 };
 
+
+.subtitle{
+	color: #ffffff;
+	font-size: 40px;
+	text-align: center;
+}
+
+.divider{
+	width: 170px;
+	height: 1px;
+	background-color: #ffffff;
+	margin: 0 auto;
+}
 
 //=====================================
 //==========RE-USIBLE CLASSES==========

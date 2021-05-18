@@ -107,7 +107,6 @@ html {
 
 .vertical-flex-main-wrapper {
   min-height: 100vh;
-  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,10 +164,11 @@ html {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding-top: 50px;
 }
 
 .menu {
-  background-color: #4a4a4a;
+  background-color: rgba(74, 74, 74, 0.789);
   position: fixed;
   left: 0;
   right: 0;
@@ -226,9 +226,66 @@ html {
   width: 100%;
 }
 
+.burger {
+  display: none;
+  z-index: 10000;
+  position: absolute;
+  right: 30px;
+  top: 16px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger__item {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.burger__item-1 {
+  width: 60%;
+  top: 0;
+}
+
+.burger__item-2 {
+  width: 80%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.burger__item-3 {
+  width: 100%;
+  bottom: 0;
+}
+
+.burger_active .burger__item-1 {
+  width: 100%;
+  top: 8px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.burger_active .burger__item-2 {
+  display: none;
+}
+
+.burger_active .burger__item-3 {
+  bottom: 10px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .footer {
   color: #ffffff;
-  height: 60px;
   background-color: #292929;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -241,6 +298,7 @@ html {
           align-items: center;
   letter-spacing: 2px;
   z-index: 1;
+  padding: 25px 0;
 }
 
 .footer__copyright,
@@ -306,6 +364,7 @@ html {
 
 .promo__title {
   text-align: center;
+  line-height: 100px;
   margin-top: 9%;
   font-size: 85px;
   letter-spacing: 10px;
@@ -594,9 +653,6 @@ html {
   padding: 50px 0px;
   position: relative;
   overflow: hidden;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .fuel-calculator {
@@ -605,7 +661,7 @@ html {
   color: rgba(255, 255, 255, 0.946);
   font-size: 25px;
   position: absolute;
-  right: -100%;
+  right: -2000px;
   -webkit-transition: all 2s;
   -o-transition: all 2s;
   transition: all 2s;
@@ -628,13 +684,12 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 40px;
-  padding: 15px 20px;
 }
 
 .fuel-calculator__distance-block,
 .fuel-calculator__fuel-consumption-block,
 .fuel-calculator__fuel-price-block {
-  margin-top: 20px;
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -674,7 +729,7 @@ html {
   color: #ffffff;
   font-size: 25px;
   position: absolute;
-  right: -100%;
+  right: -2000px;
   -webkit-transition: all 2s;
   -o-transition: all 2s;
   transition: all 2s;
@@ -711,6 +766,7 @@ html {
   font-size: 30px;
   width: 70px;
   padding: 7px;
+  background-color: rgba(255, 255, 255, 0.289);
 }
 
 .bmi-calculator__weight-field {
@@ -734,6 +790,7 @@ html {
   font-size: 30px;
   width: 70px;
   padding: 7px;
+  background-color: rgba(255, 255, 255, 0.289);
 }
 
 .bmi-calculator__answer-field {
@@ -787,6 +844,62 @@ html {
 
 .sidebar-active {
   color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .menu__wrapper {
+    width: 100%;
+  }
+
+  .menu__navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 25px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateY(-400px);
+        -ms-transform: translateY(-400px);
+            transform: translateY(-400px);
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+  }
+
+  .menu__navigation_active {
+    height: 100vh;
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+
+  .menu__navigation-item {
+    margin-top: 10%;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+@media (max-width: 524px) {
+  .footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 17px 0;
+  }
+
+  .footer__elem {
+    margin-top: 5px;
+  }
+
+  .footer__elem:first-child {
+    margin-top: 0;
+  }
 }
 
 .webp .contacts__input input { background: url(../img/contacts/background/1px.webp) repeat; }

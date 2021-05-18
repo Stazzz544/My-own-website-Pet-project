@@ -8,8 +8,7 @@ fuelCalculatorBtn.addEventListener('click', () => {
  		 fuelConsumption = document.querySelector('.fuel-calculator__fuel-consumption-enter').value,
 		 fuelPrice = document.querySelector('.fuel-calculator__fuel-price-enter').value,
 		 total = (distance / 100) * fuelConsumption * fuelPrice;
-		 console.log(typeof(total));
-		 console.log(total);
+		 result.style = 'padding: 15px 20px';
 		 if (isNaN(total)){
 			result.innerHTML =  `некорректный ввод`;
 		 } else {
@@ -20,7 +19,7 @@ fuelCalculatorBtn.addEventListener('click', () => {
 const bmiBtn = document.querySelector('.bmi-calculator__btn');
 
 bmiBtn.addEventListener('click', () => {
-	bmi ()
+	bmi ();
 });
 
 function bmi () {
@@ -46,7 +45,15 @@ function bmi () {
 	 } else{
 		answerField.innerHTML = `произошла ошибка`;
 	 }
+	 appWrapperSize (); // функция в главном документе
 };
+const burger = document.querySelector('.burger');
+		
+burger.addEventListener('click', () => {
+	const mobileMenu = document.querySelector('.menu__navigation');
+	burger.classList.toggle('burger_active');
+	mobileMenu.classList.toggle('menu__navigation_active');
+});
 
 //функция для подключения webp
 function testWebP(callback) {
@@ -70,56 +77,6 @@ testWebP(function (support) {
 //==================================
 
 
-//menu
-// const burger = document.querySelector('.burger'),
-// 	menu = document.querySelector('.menu'),
-// 	close = document.querySelector('.menu__close');
-// 	closeOverlay = document.querySelector('.menu__overlay');
-
-// burger.addEventListener('click', () => {
-// 	menu.classList.toggle('menu_active');
-// });
-
-// close.addEventListener('click', () => {
-// 	menu.classList.remove('menu_active');
-// });
-// closeOverlay.addEventListener('click', () => {
-// 	menu.classList.remove('menu_active');
-// });
-
-// const percent = document.querySelectorAll('.skills__grid-container-bar-percent'),
-// 	lines = document.querySelector('.skills__grid-container-bar span');
-
-// percent.forEach( (item, i) => {
-// 	lines[i].style.width = item.innerHTML;
-// });
-
-
-/*
-const pages = document.querySelectorAll('section'),
-		links = document.querySelectorAll('.menu__navigation-item'),
-		promo = document.querySelector('#promo'),
-		sites = document.querySelector('#sites');
-
-
-//========главная функция меню========
-
-links.forEach(function (item, itemNum) { //перебираем массив links (item), itemNum - номирация элементов
-	item.addEventListener('click', () => {
-		removeClass(pages, itemNum);
-	});
-});
-
-
-//========функция удаления класса========
-function removeClass (array, itemNum) {							//получаем массив в переменную array
-	array.forEach(function (arrayItem) {					//перебираем массив array
-		arrayItem.classList.remove("section-active"); //убераем класс section-active
-		array[itemNum].classList.add('section-active');
-	});
-}
-*/
-
 
 //======== Menu tabs and links border bottum ========
 
@@ -136,6 +93,7 @@ const menu = document.querySelector('.menu__navigation'),
 					deleteActiveClasses (sections, menuLinks, 'section-active', 'menu__navigation-link_active');
 					showElement (sections, i, 'section-active');
 					addActiveClass(menuLinks, i, 'menu__navigation-link_active');
+					appWrapperSize ();
 					}
 				});
 				
@@ -168,6 +126,7 @@ const arrow = document.querySelector('.web-apps__sidebar-arrow'),
 			arrow.classList.toggle('web-apps__sidebar-arrow_active');
 		});
 
+
 //web-apps activate
 
 const sidebarMenu = document.querySelector('.web-apps__sidebar-menu'),
@@ -175,21 +134,25 @@ const sidebarMenu = document.querySelector('.web-apps__sidebar-menu'),
 		webApps = document.querySelectorAll('.web-apps__app'),
 		webAppWrapper = document.querySelector('.web-apps__wrapper');
 
-let activeApp = document.querySelector('.active-app').offsetHeight + 100;
+let activeApp;
+appWrapperSize ();
+function appWrapperSize () {
+	activeApp = document.querySelector('.active-app').offsetHeight + 100;
+	console.log('test')
+	webAppWrapper.style.height = `${activeApp}px`;
+}
+
 webAppWrapper.style.height = `${activeApp}px`;
 
-		sidebarMenu.addEventListener('click', (event) => {
-			let target = event.target;
-			sidebarMenuItems.forEach((e, i) => {
-				if (target == e) {
-					deleteActiveClasses (webApps, sidebarMenuItems, 'active-app', 'sidebar-active');
-					showElement (webApps, i, 'active-app');
-					addActiveClass(sidebarMenuItems, i, 'sidebar-active');
-					activeApp = document.querySelector('.active-app').offsetHeight + 100;
-					webAppWrapper.style.height = `${activeApp}px`;
-				}
-			});
-
-			console.log(target);
-		});
+sidebarMenu.addEventListener('click', (event) => {
+	let target = event.target;
+	sidebarMenuItems.forEach((e, i) => {
+		if (target == e) {
+			deleteActiveClasses (webApps, sidebarMenuItems, 'active-app', 'sidebar-active');
+			showElement (webApps, i, 'active-app');
+			addActiveClass(sidebarMenuItems, i, 'sidebar-active');
+			appWrapperSize ();
+		}
+	});
+});
 

@@ -1,16 +1,32 @@
 .footer{
 	color: #ffffff;
-	height: 60px;
+	
 	background-color:rgb(41, 41, 41);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	letter-spacing: 2px;
 	z-index: 1;
+	padding: 25px 0;
 	&__copyright, &__email{
 		color: #ffffff;
 		margin: 0 20px;
 		font-weight: 200;
 		font-family: 	Montserrat;
+	}
+}
+
+@media (max-width: 524px){
+	.footer{
+		flex-direction: column;
+		padding: 17px 0;
+		
+		&__elem{
+			margin-top: 5px;
+			&:first-child{
+				margin-top: 0;
+			}
+		}
+		
 	}
 }

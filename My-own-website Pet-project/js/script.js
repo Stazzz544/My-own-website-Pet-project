@@ -47,7 +47,13 @@ function bmi () {
 	 }
 	 appWrapperSize (); // функция в главном документе
 };
-;
+const burger = document.querySelector('.burger');
+		
+burger.addEventListener('click', () => {
+	const mobileMenu = document.querySelector('.menu__navigation');
+	burger.classList.toggle('burger_active');
+	mobileMenu.classList.toggle('menu__navigation_active');
+});
 
 //функция для подключения webp
 function testWebP(callback) {

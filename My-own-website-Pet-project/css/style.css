@@ -683,7 +683,7 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 40px;
+  font-size: 25px;
 }
 
 .fuel-calculator__distance-block,
@@ -710,6 +710,24 @@ html {
   font-size: 25px;
   width: 150px;
   text-align: center;
+}
+
+.fuel-calculator__distans-enter::-webkit-input-placeholder,
+.fuel-calculator__fuel-consumption-enter::-webkit-input-placeholder,
+.fuel-calculator__fuel-price-enter::-webkit-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.fuel-calculator__distans-enter::-moz-input-placeholder,
+.fuel-calculator__fuel-consumption-enter::-moz-input-placeholder,
+.fuel-calculator__fuel-price-enter::-moz-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.fuel-calculator__distans-enter::-ms-input-placeholder,
+.fuel-calculator__fuel-consumption-enter::-ms-input-placeholder,
+.fuel-calculator__fuel-price-enter::-ms-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
 }
 
 .fuel-calculator__fuel-price-text {
@@ -762,11 +780,29 @@ html {
   margin-right: 25px;
 }
 
-.bmi-calculator__height {
+.bmi-calculator__height,
+.bmi-calculator__weight {
   font-size: 30px;
   width: 70px;
   padding: 7px;
   background-color: rgba(255, 255, 255, 0.289);
+  text-align: center;
+  color: #ffffff;
+}
+
+.bmi-calculator__height::-webkit-input-placeholder,
+.bmi-calculator__weight::-webkit-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.bmi-calculator__height::-moz-input-placeholder,
+.bmi-calculator__weight::-moz-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.bmi-calculator__height::-ms-input-placeholder,
+.bmi-calculator__weight::-ms-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
 }
 
 .bmi-calculator__weight-field {
@@ -786,13 +822,6 @@ html {
   padding: 7px;
 }
 
-.bmi-calculator__weight {
-  font-size: 30px;
-  width: 70px;
-  padding: 7px;
-  background-color: rgba(255, 255, 255, 0.289);
-}
-
 .bmi-calculator__answer-field {
   margin-top: 25px;
   background-color: rgba(255, 255, 255, 0.44);
@@ -805,6 +834,193 @@ html {
   margin-top: 25px;
   padding: 10px 25px;
   font-size: 25px;
+}
+
+.time-counter {
+  color: #ffffff;
+  font-size: 25px;
+  position: absolute;
+  right: -2000px;
+  -webkit-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+}
+
+.time-counter__global-wrapper {
+  padding: 20px 10px;
+  background-color: rgba(0, 0, 0, 0.412);
+}
+
+.time-counter__title {
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.535);
+}
+
+.time-counter__subtitle {
+  text-align: center;
+}
+
+.time-counter__user-enter-wrapper,
+.time-counter__result-wrapper {
+  padding: 25px;
+  margin: 0 -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.time-counter__result-wrapper {
+  display: none;
+  padding-top: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.time-counter__divider {
+  margin-top: 20px;
+}
+
+.time-counter__day-wrapper,
+.time-counter__mounth-wrapper,
+.time-counter__year-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 10px;
+}
+
+.time-counter__day-inp,
+.time-counter__mounth-inp,
+.time-counter__year-inp {
+  margin-top: 5px;
+  width: 80px;
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.289);
+  color: #ffffff;
+}
+
+.time-counter__day-inp::-webkit-input-placeholder,
+.time-counter__mounth-inp::-webkit-input-placeholder,
+.time-counter__year-inp::-webkit-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.time-counter__day-inp::-moz-input-placeholder,
+.time-counter__mounth-inp::-moz-input-placeholder,
+.time-counter__year-inp::-moz-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.time-counter__day-inp::-ms-input-placeholder,
+.time-counter__mounth-inp::-ms-input-placeholder,
+.time-counter__year-inp::-ms-input-placeholder {
+  color: rgba(201, 198, 198, 0.898);
+}
+
+.time-counter__day-text,
+.time-counter__mounth-text,
+.time-counter__year-text {
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.time-counter__day-inp {
+  width: 50px;
+}
+
+.time-counter__mounth-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.time-counter__mounth-inp {
+  width: 50px;
+}
+
+.time-counter__year-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.time-counter__result-flex {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.time-counter__btn,
+.time-counter__btn-clear {
+  display: block;
+  padding: 8px 18px;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.time-counter__btn-clear {
+  display: none;
+}
+
+.time-counter__result-years,
+.time-counter__result-mounth,
+.time-counter__result-mounth,
+.time-counter__result-days,
+.time-counter__result-hour,
+.time-counter__result-minutes,
+.time-counter__result-seconds {
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+
+.time-counter__result-subtitle {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.time-counter__result-years-wrapper,
+.time-counter__result-mounth-wrapper,
+.time-counter__result-days-wrapper,
+.time-counter__result-hour-wrapper,
+.time-counter__result-minutes-wrapper,
+.time-counter__result-seconds-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 10px;
 }
 
 .section-active {

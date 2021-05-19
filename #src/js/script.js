@@ -1,6 +1,7 @@
 @@include('fuel-calculator.js');
 @@include('body-mass.js');
 @@include('burger.js');
+@@include('time-counter.js');
 
 //функция для подключения webp
 function testWebP(callback) {

@@ -1,5 +1,5 @@
 .time-counter {
-	max-width: 600px;
+	// max-width: 600px;
 	color: #ffffff;
 	font-size: 25px;
 	position: absolute;
@@ -24,7 +24,7 @@
 		justify-content: center;
 	}
 	&__result-wrapper{
-		//display: none;
+		display: none;
 		padding-top: 5px;
 		flex-direction: column;
 		align-items: center;
@@ -41,75 +41,64 @@
 
 	&__day-inp, &__mounth-inp, &__year-inp {
 		margin-top: 5px;
-		width: 60px;
+		width: 80px;
 		font-size: 24px;
 		text-align: center;
-		
+		background-color:rgba(255,255,255,.289);
+		color: #ffffff;
+		&::-webkit-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-moz-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-ms-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
 	}
 	&__day-text, &__mounth-text, &__year-text {
 		margin-top: 10px;
 		font-size: 25px;
 	}
 	&__day-inp{
-		width: 35px;
+		width: 50px;
 	}
-
-	&__day-text {
-	}
-
 	&__mounth-wrapper {
 		display: flex;
 		flex-direction: column;
 	}
-
 	&__mounth-inp {
-		width: 35px;
+		width: 50px;
 	}
-
-	&__mounth-text {
-	}
-
 	&__year-wrapper {
 		display: flex;
 		flex-direction: column;
 	}
-
-	&__year-text {
-	}
-
 	&__result-flex {
 		margin-top: 20px;
 		display: flex;
 	}
 
-	&__btn{
+	&__btn, &__btn-clear {
 		display: block;
 		padding: 8px 18px;
 		font-size: 18px;
 		margin: 0 auto;
 	}
-
-	&__result-years, &__result-mounth,&__result-days,&__result-minutes,&__result-seconds {
+	&__btn-clear{
+		display: none;
+	}
+	&__result-years,&__result-mounth, &__result-mounth, &__result-days, &__result-hour, &__result-minutes, &__result-seconds {
 		margin: 0 10px;
 		margin-bottom: 10px;
 	}
 
-	&__result-mounth {
-	}
-
-	&__result-days {
-	}
-
-	&__result-minutes {
-	}
-
-	&__result-seconds {
-	}
 	&__result-subtitle{
 		margin-top: 20px;
+		text-align: center;
 	}
 
-	&__result-years-wrapper, &__result-mounth-wrapper ,&__result-days-wrapper ,&__result-minutes-wrapper ,&__result-seconds-wrapper {
+	&__result-years-wrapper, &__result-mounth-wrapper, &__result-days-wrapper, &__result-hour-wrapper, &__result-minutes-wrapper, &__result-seconds-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

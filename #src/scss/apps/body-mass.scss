@@ -29,11 +29,22 @@
 		margin-right: 25px;
 	}
 
-	&__height {
+	&__height, &__weight{
 		font-size: 30px;
 		width: 70px;
 		padding: 7px;
 		background-color:rgba(255,255,255,.289);
+		text-align: center;
+		color: #ffffff;
+		&::-webkit-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-moz-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-ms-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
 	}
 
 	&__weight-field {
@@ -45,13 +56,6 @@
 
 	&__weight-text {
 		padding: 7px;
-	}
-
-	&__weight {
-		font-size: 30px;
-		width: 70px;
-		padding: 7px;
-		background-color:rgba(255,255,255,.289);
 	}
 
 	&__answer-field {

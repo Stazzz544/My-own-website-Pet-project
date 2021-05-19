@@ -16,7 +16,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 40px;
+	font-size: 25px;
 	
 	}
 
@@ -27,9 +27,6 @@
 		align-items: center;
 	}
 
-	&__distance-text {
-	}
-
 	&__distans-enter, &__fuel-consumption-enter, &__fuel-price-enter {
 		
 		background-color: rgba(255, 255, 255, 0.289);
@@ -38,9 +35,15 @@
 		font-size: 25px;
 		width: 150px;
 		text-align: center;
-	}
-
-	&__fuel-consumption-text {
+		&::-webkit-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-moz-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
+		&::-ms-input-placeholder{
+			color: rgba(201, 198, 198, 0.898)
+		}
 	}
 
 	&__fuel-price-text {

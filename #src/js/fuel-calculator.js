@@ -12,7 +12,7 @@ fuelCalculatorBtn.addEventListener('click', () => {
 		 if (isNaN(total)){
 			result.innerHTML =  `некорректный ввод`;
 		 } else {
-			result.innerHTML = ` цена топлива: ${+total.toFixed(2)} руб.`;
+			result.innerHTML = ` стоимость топлива: ${+total.toFixed(2)} руб.`;
 		 }
 
 });

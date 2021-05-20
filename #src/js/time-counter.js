@@ -61,4 +61,3 @@ timeCounterBtn.addEventListener('click', () => {
 		}
 	}
 });
-

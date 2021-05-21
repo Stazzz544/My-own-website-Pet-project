@@ -63,9 +63,9 @@ timeCounterBtn.addEventListener('click', () => {
 			mounth = document.querySelector('.time-counter__mounth-inp').value,
 			year = document.querySelector('.time-counter__year-inp').value,
 			resultBlock = document.querySelector('.time-counter__result-wrapper'),
-			wishDate = new Date(`${year}-${mounth}-${day}`).getTime();
+			wishDate = new Date(`${year}-${mounth}-${day}`),
+			differenceTimeZoneMinutes = +wishDate + (wishDate.getTimezoneOffset() * 1000 * 60); 
 
-		
 	timeCounterBtn.style = "display: none";
 	btnClear.style =  "display: block";	
 	resultBlock.style =  "display: block";	
@@ -85,7 +85,7 @@ timeCounterBtn.addEventListener('click', () => {
 
 	function CalcDate () {
 		let nowDate = new Date(),
-			differenceDate = wishDate - nowDate,
+			differenceDate = differenceTimeZoneMinutes - nowDate,
 			newYear = Math.trunc((differenceDate / 1000 / 60 / 60 / 24/ 365)),
 			newMounth = Math.trunc((differenceDate / 1000 / 60 / 60 / 24 / 31) % 12),
 			newDay = Math.trunc((differenceDate / 1000 / 60 / 60 / 24) % 31),
@@ -99,7 +99,6 @@ timeCounterBtn.addEventListener('click', () => {
 			displayMinute = document.querySelector('.time-counter__result-minutes'),
 			displaySecond = document.querySelector('.time-counter__result-seconds');
 			
-
 		if (newYear < 0 || newMounth < 0 || newDay < 0 || newHour < 0 || newMinute < 0 || newSecond < 0) {
 			displayYear.innerHTML = '0';
 			displayMounth.innerHTML = '0';
@@ -117,7 +116,6 @@ timeCounterBtn.addEventListener('click', () => {
 		}
 	}
 });
-
 ;
 
 //функция для подключения webp

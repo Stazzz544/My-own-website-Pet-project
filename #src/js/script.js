@@ -2,6 +2,7 @@
 @@include('body-mass.js');
 @@include('burger.js');
 @@include('time-counter.js');
+@@include('phpmailer.js');
 
 //функция для подключения webp
 function testWebP(callback) {

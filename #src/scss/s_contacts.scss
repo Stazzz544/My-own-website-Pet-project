@@ -8,14 +8,14 @@
 		width: 100%;
 	}
 	&__wrapper{
-		
+		padding: 50px 0px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	&__form {
 		position: relative;
-		margin: 100px 15px 0px 15px;
+		margin: 50px 15px 0px 15px;
 		border: solid 1px #ffffff;
 		border-top: none;
 		padding: 30px;
@@ -146,3 +146,147 @@
 	}
 }
 
+//sending message
+
+/*
+adding classes to apper status of sending message:
+	form__sending-wrapper_active
+	form_active
+*/
+
+.form {
+
+	&__sending-wrapper {
+		display: none;
+		animation: 1s fadeIn;
+		z-index: 1000;
+		position: fixed;
+		top: 0px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.878);	
+	}
+	&__sending-wrapper_active{
+		display: block;
+	}
+	&__sending, &__succes, &__fail {
+		display: none;
+	}
+
+	&_active {
+		display: block;
+		animation: 2s fadeIn;
+		// border: solid 1px rgb(255, 255, 255);
+		position: absolute;
+		width: 290px;
+		height: 270px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__succes{
+		height: 230px;
+	}
+	
+
+	&__close{
+		position: absolute;
+		right: -55px;
+		top: -60px;
+		color: #ffffff;
+		font-size: 70px;
+		cursor: pointer;
+	}
+
+	&__sending-gif {
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+		width: 120px;
+	}
+	&__success-img{
+		margin: 0 auto;
+		margin-top: 40px;
+		width: 100px;
+	}
+	&__fail-img{
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+		width: 120px;
+	}
+
+	&__sending-text {
+		margin-top: 20px;
+		color:rgb(255, 254, 254);
+		text-align: center;
+		font-size: 20px;
+		line-height: 27px;
+	}
+
+}
+
+
+
+@media (max-width: 550px) {
+	.contacts{
+		&__input{
+			flex-direction: column;
+		}
+		&__input input{
+			width: 100%;
+		}
+		&__input label{
+			margin: 5px auto 0px auto;
+		}
+		&__triggers{
+			flex-direction: column;
+		}
+		&__policy{
+			order: 1;
+		}
+		&__btn{
+			margin-top: 20px;
+			order: 2;
+		}
+		&__form {
+			margin-top: 15px;
+			&::after, &::before{
+				width: 80px;
+			}
+		}
+		&__textarea{
+			margin-top: 50px;
+			height: 80px;
+			&::after, &::before{
+				width: 108px;
+			}
+		}
+		&__textarea textarea{
+			height: 80px;
+		}
+
+	}
+}
+
+@media (max-width: 450px) {
+	.contacts{
+		&__form {
+			&::after, &::before{
+				content:'';
+				width: 19px;
+			}
+		}
+		&__textarea{
+			&::after, &::before{
+				width: 40px;
+			}
+		}
+	}
+	.form__close{
+		right: 0;
+	}
+	
+}

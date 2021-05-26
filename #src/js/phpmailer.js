@@ -1,10 +1,5 @@
 //send form ========= php mailer
 
-const message = {
-	loading: 'загрузка',
-	success: 'Спасибо за письмо!',
-	failure: 'Что-то пошло не так...'
-};
 
 const forms = document.querySelectorAll('form');
 
@@ -16,10 +11,32 @@ forms.forEach(item => {
 function postData(form) {
 	form.addEventListener('submit', (e) => {
 		e.preventDefault();
-		const statusMessage = document.createElement('div');
-		statusMessage.classList.add('status');
-		statusMessage.textContent = message.loading;
-		form.append(statusMessage);
+		const loadingProgress = document.querySelector('.form__sending'),
+				loadingSuccess = document.querySelector('.form__succes'),
+				loadingFail = document.querySelector('.form__fail'),
+				loadingDarkWrapper = document.querySelector('.form__sending-wrapper'),
+				loadFormClose = document.querySelectorAll('.form__close');
+
+				
+				loadingDarkWrapper.classList.add('form__sending-wrapper_active');//затемняем фон
+				loadingProgress.classList.add('form_active');//отправка сообщения(процесс)
+
+
+				loadFormClose.forEach((e) => {
+					e.addEventListener('click', () => {
+						console.log('test');
+						loadingDarkWrapper.classList.remove('form__sending-wrapper_active');
+
+						if (loadingSuccess.classList.contains('form_active')) {
+							loadingSuccess.classList.remove('form_active');
+
+						} else if (loadingFail.classList.contains('form_active')) {
+							loadingFail.classList.remove('form_active');
+						}
+					});
+				});
+
+
 
 		const request = new XMLHttpRequest();
 		request.open('POST', 'mailer/smart.php');
@@ -38,14 +55,25 @@ function postData(form) {
 
 		request.addEventListener('load', () => {
 			if (request.status === 200) {
-				console.log(request.response);
-				statusMessage.textContent = message.success;
+				//console.log(request.response);
+
+				loadingProgress.classList.remove('form_active');
+				loadingSuccess.classList.add('form_active');
+
 				form.reset();
 				setTimeout(() => {
-					statusMessage.remove();
-				}, 2000);
+					loadingSuccess.classList.remove('form_active');
+					loadingDarkWrapper.classList.remove('form__sending-wrapper_active');
+				}, 10000);
+
 			} else {
-				statusMessage.textContent = message.failure;
+				loadingProgress.classList.remove('form_active');
+				loadingFail.classList.add('form_active');
+
+				setTimeout(() => {
+					loadingFail.classList.remove('form_active');
+					loadingDarkWrapper.classList.remove('form__sending-wrapper_active');
+				}, 10000);
 			}
 		});
 	});

@@ -364,11 +364,12 @@ html {
 
 .promo__title {
   text-align: center;
-  line-height: 100px;
-  margin-top: 9%;
-  font-size: 85px;
+  line-height: 64px;
+  margin-top: 75px;
+  font-size: 48px;
   letter-spacing: 10px;
-  opacity: 0.6;
+  opacity: .6;
+  font-weight: 500;
 }
 
 .sites {
@@ -388,6 +389,7 @@ html {
 }
 
 .contacts__wrapper {
+  padding: 50px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -402,7 +404,7 @@ html {
 
 .contacts__form {
   position: relative;
-  margin: 100px 15px 0px 15px;
+  margin: 50px 15px 0px 15px;
   border: solid 1px #ffffff;
   border-top: none;
   padding: 30px;
@@ -573,6 +575,90 @@ html {
   color: #ffffff;
 }
 
+/*
+adding classes to apper status of sending message:
+	form__sending-wrapper_active
+	form_active
+*/
+
+.form__sending-wrapper {
+  display: none;
+  -webkit-animation: 1s fadeIn;
+          animation: 1s fadeIn;
+  z-index: 1000;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.878);
+}
+
+.form__sending-wrapper_active {
+  display: block;
+}
+
+.form__sending,
+.form__succes,
+.form__fail {
+  display: none;
+}
+
+.form_active {
+  display: block;
+  -webkit-animation: 2s fadeIn;
+          animation: 2s fadeIn;
+  position: absolute;
+  width: 290px;
+  height: 270px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.form__succes {
+  height: 230px;
+}
+
+.form__close {
+  position: absolute;
+  right: -55px;
+  top: -60px;
+  color: #ffffff;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+.form__sending-gif {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: block;
+  width: 120px;
+}
+
+.form__success-img {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 100px;
+}
+
+.form__fail-img {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: block;
+  width: 120px;
+}
+
+.form__sending-text {
+  margin-top: 20px;
+  color: #fffefe;
+  text-align: center;
+  font-size: 20px;
+  line-height: 27px;
+}
+
 .web-apps {
   display: none;
   position: relative;
@@ -580,10 +666,9 @@ html {
 
 .web-apps__sidebar {
   z-index: 10;
-  position: absolute;
+  position: fixed;
   width: 340px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.694);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,7 +690,9 @@ html {
   -webkit-box-flex: 80%;
       -ms-flex: 80%;
           flex: 80%;
+  background-color: rgba(0, 0, 0, 0.694);
   padding: 50px 10px 40px 15px;
+  overflow: auto;
 }
 
 .web-apps__sidebar-item {
@@ -1098,6 +1185,102 @@ html {
   .burger {
     display: block;
   }
+
+  .web-apps__sidebar-panel {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .web-apps__sidebar-arrow {
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-top: 11px;
+  }
+
+  .web-apps__sidebar-arrow_active {
+    background-color: rgba(255, 255, 255, 0.487);
+    -webkit-transform: translateX(-72px) rotate(-180deg);
+        -ms-transform: translateX(-72px) rotate(-180deg);
+            transform: translateX(-72px) rotate(-180deg);
+  }
+}
+
+@media (max-width: 667px) {
+  .time-counter__result-flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .time-counter__result-hour-wrapper,
+  .time-counter__result-minutes-wrapper,
+  .time-counter__result-seconds-wrapper {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .promo__title {
+    font-size: 43px;
+    margin-top: 40px;
+  }
+
+  .contacts__input {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts__input input {
+    width: 100%;
+  }
+
+  .contacts__input label {
+    margin: 5px auto 0px auto;
+  }
+
+  .contacts__triggers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .contacts__policy {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .contacts__btn {
+    margin-top: 20px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .contacts__form {
+    margin-top: 15px;
+  }
+
+  .contacts__form::after,
+  .contacts__form::before {
+    width: 80px;
+  }
+
+  .contacts__textarea {
+    margin-top: 50px;
+    height: 80px;
+  }
+
+  .contacts__textarea::after,
+  .contacts__textarea::before {
+    width: 108px;
+  }
+
+  .contacts__textarea textarea {
+    height: 80px;
+  }
 }
 
 @media (max-width: 524px) {
@@ -1115,6 +1298,80 @@ html {
 
   .footer__elem:first-child {
     margin-top: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .contacts__form::after,
+  .contacts__form::before {
+    content: '';
+    width: 19px;
+  }
+
+  .contacts__textarea::after,
+  .contacts__textarea::before {
+    width: 40px;
+  }
+
+  .form__close {
+    right: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .web-apps__sidebar {
+    -webkit-transform: translateX(-306px);
+        -ms-transform: translateX(-306px);
+            transform: translateX(-306px);
+  }
+
+  .web-apps__sidebar_active {
+    width: 115%;
+    -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+
+  .web-apps__sidebar-panel {
+    -webkit-box-flex: 0%;
+        -ms-flex: 0%;
+            flex: 0%;
+    -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+
+  .web-apps__sidebar-menu {
+    -webkit-box-flex: 80%;
+        -ms-flex: 80%;
+            flex: 80%;
+  }
+}
+
+@media (max-width: 375px) {
+  .time-counter {
+    font-size: 18px;
+  }
+
+  .time-counter__user-enter-wrapper {
+    padding: 25px 10px;
+  }
+
+  .time-counter__day-text,
+  .time-counter__mounth-text,
+  .time-counter__year-text {
+    font-size: 20px;
+  }
+
+  .time-counter__result-flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .time-counter__result-days-wrapper {
+    margin-top: 0px;
   }
 }
 

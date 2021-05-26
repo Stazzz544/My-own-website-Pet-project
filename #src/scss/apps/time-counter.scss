@@ -106,3 +106,34 @@
 	}
 }
 
+@media(max-width: 667px) {
+	.time-counter{
+		&__result-flex {
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		&__result-hour-wrapper, &__result-minutes-wrapper, &__result-seconds-wrapper{
+			margin-top: 20px;
+		}
+	}
+}
+
+@media(max-width: 375px) {
+	.time-counter{
+		font-size: 18px;
+		&__user-enter-wrapper{
+			padding: 25px 10px ;
+		}
+		&__day-text, &__mounth-text, &__year-text {
+			font-size: 20px;
+		}
+		&__result-flex {
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+		&__result-days-wrapper{
+			margin-top: 0px;
+		}
+		
+	}
+}

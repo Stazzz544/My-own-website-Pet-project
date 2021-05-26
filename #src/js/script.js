@@ -87,7 +87,6 @@ let activeApp;
 appWrapperSize ();
 function appWrapperSize () {
 	activeApp = document.querySelector('.active-app').offsetHeight + 100;
-	console.log('test')
 	webAppWrapper.style.height = `${activeApp}px`;
 }
 

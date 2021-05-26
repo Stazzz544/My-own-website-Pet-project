@@ -1,5 +1,5 @@
 .time-counter {
-	// max-width: 600px;
+	// max-width: 487px;
 	color: #ffffff;
 	font-size: 25px;
 	position: absolute;
@@ -16,12 +16,14 @@
 	}
 	&__subtitle{
 		text-align: center;
+		line-height: 30px;
 	}
 	&__user-enter-wrapper, &__result-wrapper {
 		padding: 25px;
 		margin:0 -10px ;
 		display: flex;
 		justify-content: center;
+		animation: 1s fadeIn;
 	}
 	&__result-wrapper{
 		display: none;
@@ -88,7 +90,7 @@
 	&__btn-clear{
 		display: none;
 	}
-	&__result-years,&__result-mounth, &__result-mounth, &__result-days, &__result-hour, &__result-minutes, &__result-seconds {
+	&__result-days, &__result-hour, &__result-minutes, &__result-seconds {
 		margin: 0 10px;
 		margin-bottom: 10px;
 	}
@@ -98,11 +100,21 @@
 		text-align: center;
 	}
 
-	&__result-years-wrapper, &__result-mounth-wrapper, &__result-days-wrapper, &__result-hour-wrapper, &__result-minutes-wrapper, &__result-seconds-wrapper {
+	&__result-days-wrapper, &__result-hour-wrapper, &__result-minutes-wrapper, &__result-seconds-wrapper {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		margin: 0 10px;
+	}
+	&__error{
+		display: none;
+		margin-top: 20px;
+		text-align: center;
+		line-height: 23px;
+		font-size: 14px;
+		&_active{
+			display: block;
+		}
 	}
 }
 
@@ -112,8 +124,8 @@
 			flex-wrap: wrap;
 			justify-content: space-around;
 		}
-		&__result-hour-wrapper, &__result-minutes-wrapper, &__result-seconds-wrapper{
-			margin-top: 20px;
+		&__result-seconds-wrapper{
+			margin-top: 30px;
 		}
 	}
 }

@@ -3,6 +3,21 @@
 @@include('burger.js');
 @@include('time-counter.js');
 @@include('phpmailer.js');
+@@include('swiper-bundle.js');
+
+//========  swiper-slider  ========
+const swiper = new Swiper('.swiper-container', {
+	speed: 600,
+	parallax: true,
+	pagination: {
+	  el: ".swiper-pagination",
+	  clickable: true,
+	},
+	navigation: {
+	  nextEl: ".swiper-button-next",
+	  prevEl: ".swiper-button-prev",
+	},
+ });
 
 //функция для подключения webp
 function testWebP(callback) {
@@ -68,15 +83,26 @@ function addActiveClass (arr, numMenuLinc, addClass) {
 
 //======== Sidebar ========
 const arrow = document.querySelector('.web-apps__sidebar-arrow'),
-		sidebar = document.querySelector('.web-apps__sidebar');
-
+		sidebar = document.querySelector('.web-apps__sidebar'),
+		screenWidth = window.screen.width;
 		arrow.addEventListener('click', () => {
 			sidebar.classList.toggle('web-apps__sidebar_active');
+			
 			arrow.classList.toggle('web-apps__sidebar-arrow_active');
+			if (screenWidth <= 421) {
+				screenLocker();
+			}
 		});
 
+//======== screen locker ========
 
-//web-apps activate
+function screenLocker () {
+	const body = document.querySelector('body');
+	body.classList.toggle('body-lock');
+}
+
+
+////======== web-apps activate ========
 
 const sidebarMenu = document.querySelector('.web-apps__sidebar-menu'),
 		sidebarMenuItems = document.querySelectorAll('.web-apps__sidebar-item'),

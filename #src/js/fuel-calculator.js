@@ -11,8 +11,10 @@ fuelCalculatorBtn.addEventListener('click', () => {
 		 result.style = 'padding: 15px 20px';
 		 if (isNaN(total)){
 			result.innerHTML =  `некорректный ввод`;
+			appWrapperSize (); // функция в главном документе
 		 } else {
 			result.innerHTML = ` стоимость топлива: ${+total.toFixed(2)} руб.`;
+			appWrapperSize (); // функция в главном документе
 		 }
 
 });

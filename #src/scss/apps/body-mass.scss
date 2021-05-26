@@ -1,6 +1,7 @@
 
 .bmi-calculator {
 	max-width: 600px;
+	min-width: 465px;
 	color: #ffffff;
 	font-size: 25px;
 	position: absolute;
@@ -62,6 +63,7 @@
 		margin-top: 25px;
 		background-color: rgba(255, 255, 255, 0.44);
 		width: 100%;
+		line-height: 20px;
 	}
 
 	&__btn {
@@ -71,5 +73,17 @@
 		padding: 10px 25px;
 		font-size: 25px;
 		
+	}
+}
+
+
+@media (max-width: 490px) {
+	.bmi-calculator {
+		font-size: 19px;
+		min-width: 300px;
+		&__btn{
+			font-size: 20px;
+			padding: 5px 10px;
+		}
 	}
 }

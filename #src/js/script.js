@@ -6,14 +6,16 @@
 @@include('swiper-bundle.js');
 
 //========  swiper-slider  ========
-swiperInit();
+//swiperInit();
 
 function swiperInit() {
 
 	const SectionMyStack = document.querySelector('.my-stack');
 
-	if (SectionMyStack.classList.contains('section-active')) {
+	if (SectionMyStack.classList.contains('section-active') && SectionMyStack.classList.contains('swiper-init')) {
 		console.log('initializated...');
+
+		SectionMyStack.classList.remove('swiper-init');
 
 		let swiper = new Swiper('.swiper-container', {
 			autoplay: {

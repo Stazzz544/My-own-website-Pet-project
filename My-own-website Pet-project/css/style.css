@@ -927,7 +927,7 @@ html {
   left: 0;
 }
 
-.subtitle {
+.title {
   color: #ffffff;
   font-size: 40px;
   text-align: center;
@@ -948,7 +948,7 @@ html {
 }
 
 .menu {
-  background-color: rgba(74, 74, 74, 0.789);
+  background-color: rgba(74, 74, 74, 0.919);
   position: fixed;
   left: 0;
   right: 0;
@@ -1486,7 +1486,10 @@ adding classes to apper status of sending message:
   -webkit-box-flex: 20%;
       -ms-flex: 20%;
           flex: 20%;
-  background-color: rgba(0, 0, 0, 0.319);
+  background: black;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.739933)), color-stop(100%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.739933) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.739933) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
 }
 
 .web-apps__sidebar-arrow {
@@ -1508,8 +1511,10 @@ adding classes to apper status of sending message:
           transform: rotate(-180deg);
 }
 
-.web-apps__subtitle {
+.web-apps__title {
   margin-top: 60px;
+  letter-spacing: 18px;
+  opacity: .8;
 }
 
 .web-apps__divider {
@@ -1522,44 +1527,114 @@ adding classes to apper status of sending message:
   overflow: hidden;
 }
 
-.swiper-container {
-  width: 100%;
-  height: 100vh;
+.my-stack {
+  display: none;
+  position: relative;
+  margin-top: -50px;
 }
 
-.swiper-slide {
-  font-size: 18px;
-  color: #fff;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 40px 60px;
+.my-stack__title-wrapper {
+  position: absolute;
+  margin-top: 50px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 2;
 }
 
-.parallax-bg {
+.my-stack__title {
+  color: black;
+  letter-spacing: 10px;
+  opacity: .6;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.my-stack__divider {
+  background-color: #000000;
+  margin-top: 30px;
+}
+
+.my-stack__parallax-bg {
   position: absolute;
   left: 0;
   top: 0;
   width: 130%;
   height: 100%;
-  background: url(../img/my-stack/bg/bg.jpg) center center/100% 100%;
+  background: url(../img/my-stack/bg/bg.jpg) center center/cover;
   background-size: cover;
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.803);
 }
 
-.swiper-slide .title {
+.my-stack__parallax-bg-filter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.115);
+}
+
+.my-stack__swiper-wrapper {
+  padding: 115px 0 0 0;
+}
+
+.my-stack__swiper-container {
+  width: 100%;
+  min-height: calc(100vh - 60px) !important;
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+}
+
+.my-stack__swiper-slide {
+  text-shadow: 1px 1px 2px #000000;
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.my-stack__slide-title {
   font-size: 41px;
   font-weight: 300;
+  line-height: 45px;
 }
 
-.swiper-slide .subtitle {
+.my-stack__subtitle {
+  margin-top: 20px;
   font-size: 21px;
 }
 
-.swiper-slide .text {
-  font-size: 14px;
-  max-width: 400px;
+.my-stack__text {
+  margin-top: 20px;
+  font-size: 20px;
+  max-width: 500px;
   line-height: 1.3;
+}
+
+.my-stack__swiper-slide-img {
+  width: 300px;
+}
+
+.my-stack__button-next {
+  right: 10%;
+}
+
+.my-stack__button-prev {
+  left: 10%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
 }
 
 .fuel-calculator {
@@ -1748,6 +1823,7 @@ adding classes to apper status of sending message:
 }
 
 .time-counter {
+  top: 50px;
   color: #ffffff;
   font-size: 25px;
   position: absolute;
@@ -1983,6 +2059,16 @@ adding classes to apper status of sending message:
   color: #ffffff;
 }
 
+@media (max-width: 1200px) {
+  .my-stack__button-next {
+    right: 10px;
+  }
+
+  .my-stack__button-prev {
+    left: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .menu__wrapper {
     width: 100%;
@@ -2035,6 +2121,47 @@ adding classes to apper status of sending message:
         -ms-transform: translateX(-72px) rotate(-180deg);
             transform: translateX(-72px) rotate(-180deg);
   }
+
+  .web-apps__title {
+    letter-spacing: 4px;
+    line-height: 45px;
+  }
+
+  .my-stack__swiper-slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 75px;
+  }
+
+  .my-stack__title-wrapper {
+    margin-top: 85px;
+  }
+
+  .my-stack__swiper-slide-img {
+    max-height: 150px;
+    width: auto;
+  }
+
+  .my-stack__button-next {
+    right: 10px;
+  }
+
+  .my-stack__button-prev {
+    left: 10px;
+  }
+
+  .my-stack__title {
+    white-space: break-spaces;
+  }
+
+  .my-stack__slide-title {
+    margin-top: 35px;
+  }
 }
 
 @media (max-width: 667px) {
@@ -2047,6 +2174,13 @@ adding classes to apper status of sending message:
 
   .time-counter__result-seconds-wrapper {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .my-stack__button-next,
+  .my-stack__button-prev {
+    display: none;
   }
 }
 
@@ -2205,6 +2339,35 @@ adding classes to apper status of sending message:
         -ms-flex: 80%;
             flex: 80%;
   }
+
+  .my-stack__title {
+    font-size: 30px;
+  }
+
+  .my-stack__slide-title {
+    font-size: 41px;
+    line-height: 45px;
+  }
+
+  .my-stack__subtitle {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  .my-stack__text {
+    margin-top: 20px;
+    font-size: 20px;
+    max-width: 500px;
+    line-height: 1.3;
+  }
+
+  .my-stack__swiper-slide {
+    padding: 40px 20px;
+  }
+
+  .my-stack__swiper-wrapper {
+    padding: 110px 0 0 0;
+  }
 }
 
 @media (max-width: 375px) {
@@ -2238,4 +2401,4 @@ adding classes to apper status of sending message:
 
 .webp .contacts__textarea textarea { background: url(../img/contacts/background/1px.webp) repeat; }
 
-.webp .parallax-bg { background: url(../img/my-stack/bg/bg.webp) center center/100% 100%; }
+.webp .my-stack__parallax-bg { background: url(../img/my-stack/bg/bg.webp) center center/cover; }

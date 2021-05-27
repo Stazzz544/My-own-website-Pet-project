@@ -2,6 +2,7 @@
 @@include('body-mass.js');
 @@include('burger.js');
 @@include('time-counter.js');
+@@include('to-do-list.js');
 @@include('phpmailer.js');
 @@include('swiper-bundle.js');
 

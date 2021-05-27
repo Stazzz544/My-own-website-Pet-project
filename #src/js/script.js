@@ -6,19 +6,33 @@
 @@include('swiper-bundle.js');
 
 //========  swiper-slider  ========
-const swiper = new Swiper('.swiper-container', {
-	speed: 600,
-	parallax: true,
-	pagination: {
-	  el: ".swiper-pagination",
-	  clickable: true,
-	},
-	navigation: {
-	  nextEl: ".swiper-button-next",
-	  prevEl: ".swiper-button-prev",
-	},
- });
+swiperInit();
 
+function swiperInit() {
+
+	const SectionMyStack = document.querySelector('.my-stack');
+
+	if (SectionMyStack.classList.contains('section-active')) {
+		console.log('initializated...');
+
+		let swiper = new Swiper('.swiper-container', {
+			autoplay: {
+				delay: 2500,
+			},
+			speed: 500,
+			parallax: true,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+
+	}
+}
 //функция для подключения webp
 function testWebP(callback) {
 
@@ -42,61 +56,64 @@ testWebP(function (support) {
 
 
 
-//======== Menu tabs and links border bottum ========
+//======== Menu tabs and links border bottom ========
 
 const menu = document.querySelector('.menu__navigation'),
-		menuLinks = document.querySelectorAll('.menu__navigation-link'),
-		sections = document.querySelectorAll('section');
+	menuLinks = document.querySelectorAll('.menu__navigation-link'),
+	sections = document.querySelectorAll('section');
 
-		menu.addEventListener('click', (e) => {
-			const target = e.target;
-			
-			if (target.classList.contains('menu__navigation-link')) {
-				menuLinks.forEach((e, i) => {
-					if (target === e ){
-					deleteActiveClasses (sections, menuLinks, 'section-active', 'menu__navigation-link_active');
-					showElement (sections, i, 'section-active');
-					addActiveClass(menuLinks, i, 'menu__navigation-link_active');
-					appWrapperSize ();
-					}
-				});
-				
+
+
+menu.addEventListener('click', (e) => {
+	const target = e.target;
+
+	if (target.classList.contains('menu__navigation-link')) {
+		menuLinks.forEach((e, i) => {
+			if (target === e) {
+				deleteActiveClasses(sections, menuLinks, 'section-active', 'menu__navigation-link_active');
+				showElement(sections, i, 'section-active');
+				addActiveClass(menuLinks, i, 'menu__navigation-link_active');
+				swiperInit();
+				appWrapperSize();
 			}
 		});
+	}
+});
 
-		
-function deleteActiveClasses (arr1, arr2, class1, class2) {
-	arr1.forEach(item =>{
+
+function deleteActiveClasses(arr1, arr2, class1, class2) {
+	arr1.forEach(item => {
 		item.classList.remove(class1);
 	});
-	arr2.forEach(item =>{
+	arr2.forEach(item => {
 		item.classList.remove(class2);
 	});
 }
 
-function showElement (arr, numPage, addClass) {
+function showElement(arr, numPage, addClass) {
 	arr[numPage].classList.add(addClass);
 }
-function addActiveClass (arr, numMenuLinc, addClass) {
+
+function addActiveClass(arr, numMenuLinc, addClass) {
 	arr[numMenuLinc].classList.add(addClass);
 }
 
 //======== Sidebar ========
 const arrow = document.querySelector('.web-apps__sidebar-arrow'),
-		sidebar = document.querySelector('.web-apps__sidebar'),
-		screenWidth = window.screen.width;
-		arrow.addEventListener('click', () => {
-			sidebar.classList.toggle('web-apps__sidebar_active');
-			
-			arrow.classList.toggle('web-apps__sidebar-arrow_active');
-			if (screenWidth <= 421) {
-				screenLocker();
-			}
-		});
+	sidebar = document.querySelector('.web-apps__sidebar'),
+	screenWidth = window.screen.width;
+arrow.addEventListener('click', () => {
+	sidebar.classList.toggle('web-apps__sidebar_active');
+
+	arrow.classList.toggle('web-apps__sidebar-arrow_active');
+	if (screenWidth <= 421) {
+		screenLocker();
+	}
+});
 
 //======== screen locker ========
 
-function screenLocker () {
+function screenLocker() {
 	const body = document.querySelector('body');
 	body.classList.toggle('body-lock');
 }
@@ -105,13 +122,14 @@ function screenLocker () {
 ////======== web-apps activate ========
 
 const sidebarMenu = document.querySelector('.web-apps__sidebar-menu'),
-		sidebarMenuItems = document.querySelectorAll('.web-apps__sidebar-item'),
-		webApps = document.querySelectorAll('.web-apps__app'),
-		webAppWrapper = document.querySelector('.web-apps__wrapper');
+	sidebarMenuItems = document.querySelectorAll('.web-apps__sidebar-item'),
+	webApps = document.querySelectorAll('.web-apps__app'),
+	webAppWrapper = document.querySelector('.web-apps__wrapper');
 
 let activeApp;
-appWrapperSize ();
-function appWrapperSize () {
+appWrapperSize();
+
+function appWrapperSize() {
 	activeApp = document.querySelector('.active-app').offsetHeight + 100;
 	webAppWrapper.style.height = `${activeApp}px`;
 }
@@ -122,11 +140,10 @@ sidebarMenu.addEventListener('click', (event) => {
 	let target = event.target;
 	sidebarMenuItems.forEach((e, i) => {
 		if (target == e) {
-			deleteActiveClasses (webApps, sidebarMenuItems, 'active-app', 'sidebar-active');
-			showElement (webApps, i, 'active-app');
+			deleteActiveClasses(webApps, sidebarMenuItems, 'active-app', 'sidebar-active');
+			showElement(webApps, i, 'active-app');
 			addActiveClass(sidebarMenuItems, i, 'sidebar-active');
-			appWrapperSize ();
+			appWrapperSize();
 		}
 	});
 });
-

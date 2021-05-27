@@ -53,8 +53,10 @@
 	}
 
 	
-	&__subtitle{
+	&__title{
 		margin-top: 60px;
+		letter-spacing: 18px;
+    	opacity: .8;
 	}
 
 	&__divider{
@@ -80,6 +82,10 @@
 		&__sidebar-arrow_active {
 			background-color: rgba(255, 255, 255, 0.487);
 			transform: translateX(-72px) rotate(-180deg);
+		}
+		&__title{
+			letter-spacing: 4px;
+			line-height: 45px;
 		}
 	}
 }

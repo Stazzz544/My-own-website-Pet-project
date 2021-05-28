@@ -2073,7 +2073,12 @@ adding classes to apper status of sending message:
   background: linear-gradient(0deg, #8b8b8b 0%, #e9eeee 88%);
 }
 
-.todolist__note {
+.todolist__note-text-checked {
+  text-decoration: line-through;
+}
+
+.todolist__note,
+.todolist__note-checked {
   position: relative;
   margin-top: 10px;
   padding: 10px 0;
@@ -2085,6 +2090,15 @@ adding classes to apper status of sending message:
           align-items: center;
   border-top: solid 2px rgba(181, 181, 181, 0.857);
   border-bottom: solid 2px rgba(181, 181, 181, 0.857);
+}
+
+.todolist__note-checked:first-child {
+  margin-top: 60px;
+}
+
+.todolist__no-checked,
+.todolist__checked {
+  margin-top: 30px;
 }
 
 .todolist__note-text {
@@ -2099,7 +2113,8 @@ adding classes to apper status of sending message:
           user-select: none;
 }
 
-.todolist__note-delete {
+.todolist__note-delete,
+.todolist__note-delete-checked {
   position: absolute;
   right: 0;
   font-size: 50px;
@@ -2113,7 +2128,8 @@ adding classes to apper status of sending message:
           user-select: none;
 }
 
-.todolist__note-delete:hover {
+.todolist__note-delete:hover,
+.todolist__note-delete-checked:hover {
   color: #ab3030;
 }
 

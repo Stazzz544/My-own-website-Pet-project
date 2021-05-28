@@ -132,12 +132,14 @@ timeCounterBtn.addEventListener('click', () => {
 
 ;
 const todolistBtn = document.querySelector('.todolist__enter-btn'),
-	noteArray = [],
-	noteCheckedArray = [],
-	noteDeleteArray = [],
-	noteCheckArray = [];
+		noteDeleteArray = [],
+		noteCheckArray = [],
+		noteDeleteArrayChecked = [],
+		noteCheckArrayChecked = [];
 
-
+let noteArray = [],
+	 noteCheckedArray = [];
+	
 //ДОБАВЛЕНИЕ НОВОЙ ЗАПИСИ + ИНИЦИАЛИАЦИЯ ВНУТРЕННИХ ДАННЫХ		
 todolistBtn.addEventListener('click', () => {
 	mainNoteFunction();
@@ -149,52 +151,92 @@ function mainNoteFunction() {
 	clearAllNotes(); //ok
 	postNewNotes(); //ok
 	searchNewNoteTags(); //ok
+	searchNewNoteCheckedTags(); //ok
 	appWrapperSize(); //ok
 }
 
 
-
-function deleteNoteFromArray(i) {
-	noteArray.splice(i, 1);
+function deleteNoteFromArray(i, arr) {//удаляем запись из массива!!!
+	arr.splice(i, 1);
 }
 
 
-function searchNewNoteTags() {
-	const newCheck = document.querySelectorAll('.todolist__note-checkbox'),
-		newDelete = document.querySelectorAll('.todolist__note-delete');
+function searchNewNoteCheckedTags() {
+	const newCheck = document.querySelectorAll('.todolist__note-checkbox-checked'),  // получаем все чекбоксы
+		newDelete = document.querySelectorAll('.todolist__note-delete-checked');      // получаем все крестики
 
-	addToArray(noteDeleteArray, newDelete);
-	addToArray(noteCheckArray, newCheck);
+	addToArray(noteDeleteArrayChecked, newDelete);  // складываем все крестики в массив
+	addToArray(noteCheckArrayChecked, newCheck);    // складываем все чекбоксы в массив
 
-	noteDeleteArray.forEach((e, i) => {
+	noteDeleteArrayChecked.forEach((e, i) => {
 		e.addEventListener('click', () => {
-			deleteNoteFromArray(i);
+			deleteNoteFromArray(i, noteCheckedArray);//удаляем запись из массива!!!
+			clearAllCheckedNotes();
+			postCheckedNotes();
 			mainNoteFunction();
 		});
 	});
 
-	//говёный участок кода
+	returnNotCheckedNote();
+}
+
+
+function searchNewNoteTags() {
+	const newCheck = document.querySelectorAll('.todolist__note-checkbox'),  // получаем все чекбоксы
+		newDelete = document.querySelectorAll('.todolist__note-delete');      // получаем все крестики
+
+	addToArray(noteDeleteArray, newDelete);  // складываем все крестики в массив
+	addToArray(noteCheckArray, newCheck);    // складываем все чекбоксы в массив
+
+	noteDeleteArray.forEach((e, i) => {
+		e.addEventListener('click', () => {
+			deleteNoteFromArray(i, noteArray);//удаляем запись из массива!!!
+			mainNoteFunction();
+		});
+	});
+
+	pushCheckedNote ()
+}
+
+
+function pushCheckedNote () {
 	noteCheckArray.forEach((checkTag, checkNum) => {
 		checkTag.addEventListener('click', () => {
-			if (checkTag.checked) {
-				const allNotes = document.querySelectorAll('.todolist__note');
-				noteArray.forEach((arrItem, arrNum) => {
-					if (checkNum === arrNum) {
+			if (checkTag.checked) {//если стоит чек, то...
+				noteArray.forEach((arrItem, arrNum) => {// прочёсчываем главный массив..
+					if (checkNum === arrNum) {//сравниваем номер чекбокса с номером тега в массиве
 						
-						let removed = noteArray.splice(arrNum, 1);
-						console.log('removed', removed);
-						console.log('noteCheckedArray', noteCheckedArray);
+						let removed = noteArray.splice(arrNum, 1); //забираем при чеке элемент в переменную
+						noteCheckedArray = noteCheckedArray.concat(removed) //добавляем чек в новый массив
+						clearAllCheckedNotes();
+						postCheckedNotes();
+						mainNoteFunction(); //обновляем
+					}
+				});
+			}
+		});
+	});
+}
 
-						noteCheckedArray.concat(removed);
+
+function returnNotCheckedNote () {
+	noteCheckArrayChecked.forEach((checkTag, checkNum) => {
+		checkTag.addEventListener('click', () => {
+			if (!checkTag.checked) {//если стоит чек, то...
+				noteCheckedArray.forEach((arrItem, arrNum) => {// прочёсчываем главный чекнутый массив..
+					if (checkNum === arrNum) {//сравниваем номер чекбокса с номером тега в массиве
 						
-						//divTag.style.textDecoration = "line-through";
+						let removed = noteCheckedArray.splice(arrNum, 1); //забираем при чеке элемент в переменную
+						noteArray = noteArray.concat(removed) //добавляем чек в новый массив
+						postNewNotes();
+						clearAllCheckedNotes();
+						postCheckedNotes();
 						mainNoteFunction();
 					}
 				});
 			}
 		});
 	});
-	//говёный участок кода всё
 }
 
 
@@ -204,38 +246,67 @@ function pushNewNoteToArray() {
 		noteArray.push(inpValue);
 	}
 	document.querySelector('.todolist__enter-inp').value = '';
-	console.log(noteArray);
 }
 
 
 function clearAllNotes() {
-	const allNotes = document.querySelectorAll('.todolist__note');
+	const allNotes = document.querySelectorAll('.todolist__no-checked');
 	allNotes.forEach((e) => {
 		e.remove();
 	});
 }
 
-
-function postNewNotes() {
-	const noteWrapper = document.querySelector('.todolist__note-wrapper');
-	noteArray.forEach((e) => {
-		noteWrapper.innerHTML += `
-		<li class="todolist__note">
-			<input class="todolist__note-checkbox"  type="checkbox">
-			<div class="todolist__note-text">${e}</div>
-			<div class="todolist__note-delete">&times</div>
-		</li>
-		`;
+function clearAllCheckedNotes() {
+	const allCheckedNotes = document.querySelectorAll('.todolist__checked');
+	allCheckedNotes.forEach((e) => {
+		e.remove();
 	});
 }
 
+
+
+
+function postCheckedNotes() {
+	const noteWrapper = document.querySelector('.todolist__note-wrapper'),
+			element = document.createElement('li');
+			element.classList.add('todolist__checked')
+	noteCheckedArray.forEach((e) => {
+		element.innerHTML += `
+		<div class="todolist__note">
+			<input class="todolist__note-checkbox-checked"  type="checkbox" checked>
+			<div class="todolist__note-text todolist__note-text-checked">${e}</div>
+			<div class="todolist__note-delete-checked">&times</div>
+		</div>
+		`;
+		noteWrapper.append(element);
+	});
+}
+
+function postNewNotes() {
+	const noteWrapper = document.querySelector('.todolist__note-wrapper'),
+			element = document.createElement('li');
+			element.classList.add('todolist__no-checked')
+	noteArray.forEach((e) => {
+		element.innerHTML += `
+		<div class="todolist__note">
+			<input class="todolist__note-checkbox"  type="checkbox">
+			<div class="todolist__note-text">${e}</div>
+			<div class="todolist__note-delete">&times</div>
+		</div>
+		`;
+		noteWrapper.prepend(element);
+	});
+}
 
 function addToArray(array, item) {
 	array.splice(0);
 	item.forEach((e) => {
 		array.push(e);
 	});
-};
+}
+
+
+;
 //send form ========= php mailer
 
 

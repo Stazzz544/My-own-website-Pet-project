@@ -36,7 +36,10 @@
 	&__note-wrapper{
 		
 	}
-	&__note{
+	&__note-text-checked{
+		text-decoration: line-through;
+	}
+	&__note, &__note-checked{
 		position: relative;
 		margin-top: 10px;
 		padding: 10px 0;
@@ -45,6 +48,16 @@
 		border-top: solid 2px rgba(181, 181, 181, 0.857);
 		border-bottom: solid 2px rgba(181, 181, 181, 0.857);
 	}
+	&__note-checked{
+		&:first-child{
+			margin-top: 60px;
+		}
+	}
+	&__no-checked, &__checked {
+		margin-top: 30px;
+	}
+
+
 	&__note-checkbox{
 	}
 
@@ -55,7 +68,7 @@
 		user-select: none;
 	}
 
-	&__note-delete{
+	&__note-delete, &__note-delete-checked{
 		position: absolute;
 		right: 0;
 		font-size: 50px;

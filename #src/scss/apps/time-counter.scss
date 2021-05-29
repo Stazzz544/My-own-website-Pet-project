@@ -32,6 +32,9 @@
 		flex-direction: column;
 		align-items: center;
 	}
+	&__result-title{
+		text-align: center;
+	}
 	&__divider{
 		margin-top: 20px;
 	}
@@ -80,6 +83,7 @@
 	&__result-flex {
 		margin-top: 20px;
 		display: flex;
+		justify-content: center;
 	}
 
 	&__btn, &__btn-clear {

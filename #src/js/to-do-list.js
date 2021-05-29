@@ -15,16 +15,13 @@ todolistBtn.addEventListener('click', () => {
 
 function mainNoteFunction() {
 	pushNewNoteToArray(); //ok
-	clearAllNotes(); //ok
+	clearAllNotes('.todolist__no-checked'); //ok
 	postNewNotes(); //ok
 	searchNewNoteTags(); //ok
 	searchNewNoteCheckedTags(); //ok
 	appWrapperSize(); //ok
-}
-
-
-function deleteNoteFromArray(i, arr) {//удаляем запись из массива!!!
-	arr.splice(i, 1);
+	//console.log('noteArray', noteArray);
+	//console.log('noteCheckedArray', noteCheckedArray);
 }
 
 
@@ -38,9 +35,10 @@ function searchNewNoteCheckedTags() {
 	noteDeleteArrayChecked.forEach((e, i) => {
 		e.addEventListener('click', () => {
 			deleteNoteFromArray(i, noteCheckedArray);//удаляем запись из массива!!!
-			clearAllCheckedNotes();
+			clearAllNotes('.todolist__checked');
 			postCheckedNotes();
 			mainNoteFunction();
+			
 		});
 	});
 
@@ -72,10 +70,9 @@ function pushCheckedNote () {
 			if (checkTag.checked) {//если стоит чек, то...
 				noteArray.forEach((arrItem, arrNum) => {// прочёсчываем главный массив..
 					if (checkNum === arrNum) {//сравниваем номер чекбокса с номером тега в массиве
-						
 						let removed = noteArray.splice(arrNum, 1); //забираем при чеке элемент в переменную
 						noteCheckedArray = noteCheckedArray.concat(removed) //добавляем чек в новый массив
-						clearAllCheckedNotes();
+						clearAllNotes('.todolist__checked');
 						postCheckedNotes();
 						mainNoteFunction(); //обновляем
 					}
@@ -96,7 +93,7 @@ function returnNotCheckedNote () {
 						let removed = noteCheckedArray.splice(arrNum, 1); //забираем при чеке элемент в переменную
 						noteArray = noteArray.concat(removed) //добавляем чек в новый массив
 						postNewNotes();
-						clearAllCheckedNotes();
+						clearAllNotes('.todolist__checked');
 						postCheckedNotes();
 						mainNoteFunction();
 					}
@@ -105,32 +102,6 @@ function returnNotCheckedNote () {
 		});
 	});
 }
-
-
-function pushNewNoteToArray() {
-	const inpValue = document.querySelector('.todolist__enter-inp').value;
-	if (inpValue != '') {
-		noteArray.push(inpValue);
-	}
-	document.querySelector('.todolist__enter-inp').value = '';
-}
-
-
-function clearAllNotes() {
-	const allNotes = document.querySelectorAll('.todolist__no-checked');
-	allNotes.forEach((e) => {
-		e.remove();
-	});
-}
-
-function clearAllCheckedNotes() {
-	const allCheckedNotes = document.querySelectorAll('.todolist__checked');
-	allCheckedNotes.forEach((e) => {
-		e.remove();
-	});
-}
-
-
 
 
 function postCheckedNotes() {
@@ -149,6 +120,7 @@ function postCheckedNotes() {
 	});
 }
 
+
 function postNewNotes() {
 	const noteWrapper = document.querySelector('.todolist__note-wrapper'),
 			element = document.createElement('li');
@@ -165,11 +137,35 @@ function postNewNotes() {
 	});
 }
 
+
+//для этих функций рефакторинг не требуется
+function pushNewNoteToArray() {
+	const inpValue = document.querySelector('.todolist__enter-inp').value;
+	if (inpValue != '') {
+		noteArray.push(inpValue);
+	}
+	document.querySelector('.todolist__enter-inp').value = '';
+}
+
+function deleteNoteFromArray(i, arr) {//удаляем запись из массива
+	arr.splice(i, 1);
+}
+
+function clearAllNotes(cls) { // удаляем тег с влодением, поиск по классу
+	document.querySelectorAll(cls).forEach((e) => {
+		e.remove();
+	});
+}
+
 function addToArray(array, item) {
 	array.splice(0);
 	item.forEach((e) => {
 		array.push(e);
 	});
 }
+
+
+
+
 
 

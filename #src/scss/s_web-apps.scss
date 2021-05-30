@@ -102,10 +102,19 @@
 		}
 		&__sidebar-panel{
 			flex: 0%;
-			transform: translateX(10px);
+			//transform: translateX(10px);
 		}
 		&__sidebar-menu{
 			flex: 80%;
+		}
+		&__sidebar-arrow{
+			transform: translateX(10px);
+		}
+		&__sidebar-arrow_active {
+			transform: translateX(-72px) rotate(-180deg);
+		}
+		&__sidebar-item{
+			margin-right: 10px;
 		}
 	}
 }

@@ -144,6 +144,34 @@
 	&__policy-link {
 		color: #ffffff;
 	}
+	&__messangers-wrapper{
+		position: relative;
+		z-index: 1;
+		margin-top: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	&__messangers-item{
+		display: flex;
+		justify-content: center;
+
+
+		width: 70px;
+	}
+	&__messangers-item-link{
+		margin-top: 20px;
+		display: block;
+		
+	}
+	&__messangers-item-link svg{
+		height: 40px;
+		fill: #ffffffb6;
+		transition: 0.3s all;
+		&:hover{
+			margin-top: -7px;
+		}
+	}
 }
 
 //sending message

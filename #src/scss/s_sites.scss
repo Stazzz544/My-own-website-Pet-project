@@ -1,3 +1,112 @@
 .sites{
 	display: none;
+	position: relative;
+
+
+	background-image: url('../img/my-sites/bg/bg1.jpg');
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	&__title{
+		margin-top: 40px;
+	}
+	&__divider{
+		margin-top: 40px;
+	}
+	&__grid-container{
+		padding: 30px 0;
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 60px;
+		grid-auto-rows: 60px;
+		gap: 10px;
+	}
+	&__grid-item{
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: cover;
+		transition: all 0.4s;
+		opacity: 0.8;
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
+		&:hover{
+			z-index: 10;
+			transform: scale(1.1);
+			opacity: 1;
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;
+
+
+		}
+
+	}
+	&__grid-item-1{
+		background-image: url('../img/my-sites/galery/taxi.jpg');
+		grid-column: 1 / 2;
+		grid-row: 1 / 7;
+	}
+	&__grid-item-2{
+		background-image: url('../img/my-sites/galery/landingStartup.jpg');
+		grid-column: 2 / 3;
+		grid-row: 1 / 4;
+	}
+	&__grid-item-3{
+		background-image: url('../img/my-sites/galery/smart-camera.jpg');
+		grid-column: 2 / 4;
+		grid-row: 4 / 7;
+	}
+	&__grid-item-4{
+		background-image: url('../img/my-sites/galery/portfolio.jpg');
+		grid-column: 3 / 4;
+		grid-row: 1 / 4;
+	}
+	&__grid-item-5{
+		background-image: url('../img/my-sites/galery/allotrop.jpg');
+		grid-column: 4 / 6;
+		grid-row: 1 / 4;
+	}
+	&__grid-item-6{
+		background-image: url('../img/my-sites/galery/milroads.jpg');
+		grid-column: 4 / 5;
+		grid-row: 4 / 7;
+	}
+	&__grid-item-7{
+		background-image: url('../img/my-sites/galery/landingWP.jpg');
+		grid-column: 5 / 6;
+		grid-row: 4 / 7;
+	}
+}
+
+@media(max-width: 768px) {
+	.sites{
+		background-image: url('../img/my-sites/bg/bg720.jpg');
+		&__grid-container{
+			padding: 30px 0;
+			margin: 0 auto;
+			margin-top: 20px;
+			width: 85%;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 400px;
+			grid-auto-rows: 400px;
+			gap: 0px;
+			row-gap: 35px;
+		}
+		&__grid-item{
+
+			opacity: 1;
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;
+			grid-row: auto;
+			grid-column: auto;
+			&:hover{
+				transform: scale(1);
+				-webkit-filter: none; /* Safari 6.0 - 9.0 */
+				filter: none;
+			}
+		}
+	}
 }

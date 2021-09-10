@@ -1154,6 +1154,97 @@ html {
 
 .sites {
   display: none;
+  position: relative;
+  background-image: url("../img/my-sites/bg/bg1.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sites__title {
+  margin-top: 40px;
+}
+
+.sites__divider {
+  margin-top: 40px;
+}
+
+.sites__grid-container {
+  padding: 30px 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 60px;
+  grid-auto-rows: 60px;
+  gap: 10px;
+}
+
+.sites__grid-item {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0.8;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.sites__grid-item:hover {
+  z-index: 10;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
+  -webkit-filter: none;
+  /* Safari 6.0 - 9.0 */
+  filter: none;
+}
+
+.sites__grid-item-1 {
+  background-image: url("../img/my-sites/galery/taxi.jpg");
+  grid-column: 1 / 2;
+  grid-row: 1 / 7;
+}
+
+.sites__grid-item-2 {
+  background-image: url("../img/my-sites/galery/landingStartup.jpg");
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+}
+
+.sites__grid-item-3 {
+  background-image: url("../img/my-sites/galery/smart-camera.jpg");
+  grid-column: 2 / 4;
+  grid-row: 4 / 7;
+}
+
+.sites__grid-item-4 {
+  background-image: url("../img/my-sites/galery/portfolio.jpg");
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.sites__grid-item-5 {
+  background-image: url("../img/my-sites/galery/allotrop.jpg");
+  grid-column: 4 / 6;
+  grid-row: 1 / 4;
+}
+
+.sites__grid-item-6 {
+  background-image: url("../img/my-sites/galery/milroads.jpg");
+  grid-column: 4 / 5;
+  grid-row: 4 / 7;
+}
+
+.sites__grid-item-7 {
+  background-image: url("../img/my-sites/galery/landingWP.jpg");
+  grid-column: 5 / 6;
+  grid-row: 4 / 7;
 }
 
 .contacts {
@@ -1353,6 +1444,46 @@ html {
 
 .contacts__policy-link {
   color: #ffffff;
+}
+
+.contacts__messangers-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.contacts__messangers-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70px;
+}
+
+.contacts__messangers-item-link {
+  margin-top: 20px;
+  display: block;
+}
+
+.contacts__messangers-item-link svg {
+  height: 40px;
+  fill: #ffffffb6;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.contacts__messangers-item-link svg:hover {
+  margin-top: -7px;
 }
 
 /*
@@ -1875,6 +2006,10 @@ adding classes to apper status of sending message:
           align-items: center;
 }
 
+.time-counter__result-title {
+  text-align: center;
+}
+
 .time-counter__divider {
   margin-top: 20px;
 }
@@ -1964,6 +2099,9 @@ adding classes to apper status of sending message:
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .time-counter__btn,
@@ -2103,6 +2241,7 @@ adding classes to apper status of sending message:
 
 .todolist__note-text {
   margin-left: 10px;
+  margin-right: 30px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -2219,6 +2358,41 @@ adding classes to apper status of sending message:
     display: block;
   }
 
+  .sites {
+    background-image: url("../img/my-sites/bg/bg720.jpg");
+  }
+
+  .sites__grid-container {
+    padding: 30px 0;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px;
+    grid-auto-rows: 400px;
+    gap: 0px;
+    row-gap: 35px;
+  }
+
+  .sites__grid-item {
+    opacity: 1;
+    -webkit-filter: none;
+    /* Safari 6.0 - 9.0 */
+    filter: none;
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .sites__grid-item:hover {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-filter: none;
+    /* Safari 6.0 - 9.0 */
+    filter: none;
+  }
+
   .web-apps__sidebar-panel {
     background-color: rgba(0, 0, 0, 0);
   }
@@ -2294,6 +2468,12 @@ adding classes to apper status of sending message:
   .my-stack__button-next,
   .my-stack__button-prev {
     display: none;
+  }
+}
+
+@media (max-width: 590px) {
+  .todolist {
+    width: 90%;
   }
 }
 
@@ -2442,15 +2622,28 @@ adding classes to apper status of sending message:
     -webkit-box-flex: 0%;
         -ms-flex: 0%;
             flex: 0%;
-    -webkit-transform: translateX(10px);
-        -ms-transform: translateX(10px);
-            transform: translateX(10px);
   }
 
   .web-apps__sidebar-menu {
     -webkit-box-flex: 80%;
         -ms-flex: 80%;
             flex: 80%;
+  }
+
+  .web-apps__sidebar-arrow {
+    -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+
+  .web-apps__sidebar-arrow_active {
+    -webkit-transform: translateX(-72px) rotate(-180deg);
+        -ms-transform: translateX(-72px) rotate(-180deg);
+            transform: translateX(-72px) rotate(-180deg);
+  }
+
+  .web-apps__sidebar-item {
+    margin-right: 10px;
   }
 
   .my-stack__title {
@@ -2481,6 +2674,19 @@ adding classes to apper status of sending message:
   .my-stack__swiper-wrapper {
     padding: 110px 0 0 0;
   }
+
+  .todolist {
+    padding: 25px 20px;
+  }
+
+  .todolist__enter-inp,
+  .todolist__note-text {
+    font-size: 15px;
+  }
+
+  .todolist__note-delete {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -2510,8 +2716,29 @@ adding classes to apper status of sending message:
   }
 }
 
+.webp .sites { background-image: url(../img/my-sites/bg/bg1.webp); }
+
+.webp .sites__grid-item-1 { background-image: url(../img/my-sites/galery/taxi.webp); }
+
+.webp .sites__grid-item-2 { background-image: url(../img/my-sites/galery/landingStartup.webp); }
+
+.webp .sites__grid-item-3 { background-image: url(../img/my-sites/galery/smart-camera.webp); }
+
+.webp .sites__grid-item-4 { background-image: url(../img/my-sites/galery/portfolio.webp); }
+
+.webp .sites__grid-item-5 { background-image: url(../img/my-sites/galery/allotrop.webp); }
+
+.webp .sites__grid-item-6 { background-image: url(../img/my-sites/galery/milroads.webp); }
+
+.webp .sites__grid-item-7 { background-image: url(../img/my-sites/galery/landingWP.webp); }
+
 .webp .contacts__input input { background: url(../img/contacts/background/1px.webp) repeat; }
 
 .webp .contacts__textarea textarea { background: url(../img/contacts/background/1px.webp) repeat; }
 
 .webp .my-stack__parallax-bg { background: url(../img/my-stack/bg/bg.webp) center center/cover; }
+
+@media (max-width: 768px) {
+
+  .webp .sites { background-image: url(../img/my-sites/bg/bg720.webp); }
+}

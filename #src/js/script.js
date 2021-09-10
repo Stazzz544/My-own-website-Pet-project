@@ -14,7 +14,6 @@ function swiperInit() {
 	const SectionMyStack = document.querySelector('.my-stack');
 
 	if (SectionMyStack.classList.contains('section-active') && SectionMyStack.classList.contains('swiper-init')) {
-		console.log('initializated...');
 
 		SectionMyStack.classList.remove('swiper-init');
 
@@ -69,7 +68,8 @@ const menu = document.querySelector('.menu__navigation'),
 
 menu.addEventListener('click', (e) => {
 	const target = e.target;
-
+	e.preventDefault();
+	
 	if (target.classList.contains('menu__navigation-link')) {
 		menuLinks.forEach((e, i) => {
 			if (target === e) {
@@ -78,11 +78,22 @@ menu.addEventListener('click', (e) => {
 				addActiveClass(menuLinks, i, 'menu__navigation-link_active');
 				swiperInit();
 				appWrapperSize();
+				rollMainMenuAfterChoice(menu, 'menu__navigation_active');
+				rollMainMenuAfterChoice(burger, 'burger_active');
 			}
 		});
 	}
 });
 
+function rollMainMenuAfterChoice(item, cls) {
+	if (item.classList.contains(cls)) {
+		item.classList.remove(cls);
+		const body = document.querySelector('body');
+		if (body.classList.contains('body-lock')) {
+			screenLocker();
+		}
+	}
+}
 
 function deleteActiveClasses(arr1, arr2, class1, class2) {
 	arr1.forEach(item => {

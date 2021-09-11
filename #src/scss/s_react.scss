@@ -1,0 +1,80 @@
+.react {
+	display: none;
+	position: relative;
+	&__dark-filter{
+		background: rgba(0, 0, 0, 0.245);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	&__wrapper{
+		padding: 50px 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__form {
+		position: relative;
+		margin: 50px 15px 0px 15px;
+		border: solid 1px #ffffff;
+		border-top: none;
+		padding: 30px;
+		&::after {
+			content:'';
+			height: 1px;
+			width: 133px;
+			top: 0;
+			right: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+		&::before{
+			content:'';
+			height: 1px;
+			width: 133px;
+			top: 0;
+			left: 0;
+			background-color: #ffffff;
+			position: absolute;
+		}
+	}
+	&__title{
+		margin-top: 60px;
+	}
+	&__divider{
+		margin-top: 30px;
+	}
+	&__galery-wrapper{
+		margin: 0 auto;
+		margin-top: 40px;
+		display: flex;
+		justify-content: space-around;
+		width: 80%;
+
+	}
+	&__galery-item{
+		padding: 5px;
+		border: solid 1px #ffffff87;
+		cursor:pointer;
+		transition: all 0.4s;
+		opacity: 0.8;
+		-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+		filter: grayscale(100%);
+		&:hover{
+			z-index: 10;
+			transform: scale(1.1);
+			opacity: 1;
+			-webkit-filter: none; /* Safari 6.0 - 9.0 */
+			filter: none;
+		}
+	}
+	&__galery-item-img{
+		height: 200px;
+	}
+}
+
+
+
+
+
+//https://youtu.be/2TmCmt6G2sQ

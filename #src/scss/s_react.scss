@@ -54,7 +54,7 @@
 	}
 	&__galery-item{
 		padding: 5px;
-		border: solid 1px #ffffff87;
+		border: solid 1px #ffffffea;
 		cursor:pointer;
 		transition: all 0.4s;
 		opacity: 0.8;
@@ -71,10 +71,142 @@
 	&__galery-item-img{
 		height: 200px;
 	}
+	&__about-app-bg{
+		height: 100vh;
+		width: 100vw;
+		position: fixed;
+		top: 0;
+		z-index: 100000;
+
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+	&__about-app-bg_active{
+		display: flex;
+		//background-color: #0000007d;
+		animation: .5s linear showBlackBg forwards;
+	}
+	&__about-app-bg_disactive{
+		animation: .5s linear showTransparantBg forwards;
+	}
+	&__about-app-wrapper{
+		position: relative;
+		background-color: #d0d0d0e1;
+		max-width: 700px;
+		padding: 30px 10px;
+		display:none;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0px 10px;
+	}
+	&__about-app-wrapper_active{
+		display:flex;
+		animation: 0.8s linear showScale forwards;
+	}
+	&__about-app-wrapper_disactive{
+		animation: 0.4s linear closeScale forwards;
+	}
+	&__about-app-flex{
+		display: none;
+		justify-content: space-around;
+	}
+	&__about-app-flex_active{
+		display: flex;
+	}
+	&__about-app-video {
+		width:50%;
+		height: 340px;
+
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+	&__about-app-youtube{
+		width: 100%;
+		height: 100%;
+		border-radius: 15px;
+	}
+	&__about-app-discription {
+		flex: 0 0 40%;
+	}
+
+	&__about-app-title {
+		font-size: 30px;
+		font-weight: bold;
+	}
+
+	&__about-app-subtitle {
+		margin-top: 10px;
+		font-size: 20px;
+	}
+
+	&__about-app-text {
+		margin-top: 10px;
+		line-height: 16px;
+		margin-bottom: 10px;
+	}
+	&__about-app-btn-span{
+		border: 1px solid #000000;
+		padding: 10px 15px;
+		display: inline;
+	}
+
+	&__about-app-btn-wrapper {
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		align-items: center;
+		border: 1px solid #000000;
+		padding: 10px;
+		width: 200px;
+		margin-left: 75px;
+
+	}
+	&__about-app-btn-wrapper:hover .react__about-app-btn-img{
+		fill: red;
+
+	}
+
+	&__about-app-btn-img {
+		transition: .5s all;
+	}
+
+	&__about-btn-text {
+		color: #000000;
+		line-height: 20px;
+		font-weight: bold;
+	}
+	&__about-app-close{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		font-size: 30px;
+		cursor: pointer;
+		transition: 0.5s all;
+		&:hover{
+			color: rgb(255, 0, 0)
+		}
+	}
 }
 
-
-
+@keyframes showBlackBg { 
+	0% { background-color: #00000000; } 
+	100% { background-color: #0000007d; }
+}
+@keyframes showTransparantBg { 
+	0% { background-color: #0000007d; }
+	100% { background-color: #00000000; } 
+}
+@keyframes showScale { 
+	0% { transform:scale(0.7); opacity: 0;}
+	100% {transform:scale(1); opacity: 1; } 
+}
+@keyframes closeScale { 
+	0% {transform:scale(1); opacity: 1; } 
+	100% { transform:scale(0.7); opacity: 0;}
+}
 
 
 //https://youtu.be/2TmCmt6G2sQ

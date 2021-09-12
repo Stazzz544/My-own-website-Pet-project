@@ -5,6 +5,7 @@
 @@include('to-do-list.js');
 @@include('phpmailer.js');
 @@include('swiper-bundle.js');
+@@include('react-app-page.js');
 
 //========  swiper-slider  ========
 //swiperInit();

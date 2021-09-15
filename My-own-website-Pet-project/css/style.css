@@ -1839,13 +1839,17 @@ adding classes to apper status of sending message:
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 80%;
+  max-width: 1100px;
+  margin-bottom: 40px;
 }
 
 .react__galery-item {
   padding: 5px;
+  margin: 5px;
   border: solid 1px #ffffffea;
   cursor: pointer;
   -webkit-transition: all 0.4s;
@@ -1870,6 +1874,7 @@ adding classes to apper status of sending message:
 
 .react__galery-item-img {
   height: 200px;
+  max-width: 320px;
 }
 
 .react__about-app-bg {
@@ -1939,6 +1944,8 @@ adding classes to apper status of sending message:
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .react__about-app-video {
@@ -1972,8 +1979,10 @@ adding classes to apper status of sending message:
 }
 
 .react__about-app-subtitle {
-  margin-top: 10px;
-  font-size: 20px;
+  font-family: serif;
+  margin: 15px 0;
+  font-size: 15px;
+  color: #5a4444;
 }
 
 .react__about-app-text {
@@ -2826,6 +2835,51 @@ adding classes to apper status of sending message:
 
   .time-counter__result-seconds-wrapper {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  .react__about-app-flex_active {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .react__about-app-btn-wrapper {
+    margin: 10px auto 0 auto;
+  }
+
+  .react__about-app-video {
+    width: auto;
+  }
+
+  .react__about-app-wrapper_active {
+    margin: 60px 10px;
+  }
+
+  .react__about-app-bg_active {
+    overflow: scroll;
+    display: block;
+  }
+
+  .react__galery-item-img {
+    max-width: 290px;
+  }
+
+  .react__about-app-subtitle {
+    margin-top: 20px;
+  }
+
+  .react__about-app-text {
+    margin: 20px 0;
+  }
+
+  .react {
+    z-index: 2;
   }
 }
 

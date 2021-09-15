@@ -48,12 +48,15 @@
 		margin: 0 auto;
 		margin-top: 40px;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
-		width: 80%;
+		max-width: 1100px;
+		margin-bottom: 40px;
 
 	}
 	&__galery-item{
 		padding: 5px;
+		margin: 5px;
 		border: solid 1px #ffffffea;
 		cursor:pointer;
 		transition: all 0.4s;
@@ -70,6 +73,7 @@
 	}
 	&__galery-item-img{
 		height: 200px;
+		max-width: 320px;
 	}
 	&__about-app-bg{
 		height: 100vh;
@@ -113,6 +117,7 @@
 	}
 	&__about-app-flex_active{
 		display: flex;
+		flex-wrap: wrap;
 	}
 	&__about-app-video {
 		width:50%;
@@ -137,8 +142,11 @@
 	}
 
 	&__about-app-subtitle {
-		margin-top: 10px;
-		font-size: 20px;
+		//font-style: italic;
+		font-family: serif;
+		margin: 15px 0;
+		font-size: 15px;
+		color:rgb(90, 68, 68)
 	}
 
 	&__about-app-text {
@@ -209,4 +217,34 @@
 }
 
 
-//https://youtu.be/2TmCmt6G2sQ
+@media(max-width: 620px) {
+	.react__about-app-flex_active{
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.react__about-app-btn-wrapper{
+		margin: 10px auto 0 auto;
+	}
+	.react__about-app-video{
+		width: auto;
+	}
+	.react__about-app-wrapper_active{
+		margin: 60px 10px;
+	}
+	.react__about-app-bg_active{
+		overflow: scroll;
+		display: block;
+	}
+	.react__galery-item-img{
+		max-width: 290px;
+	}
+	.react__about-app-subtitle{
+		margin-top: 20px;
+	}
+	.react__about-app-text{
+		margin: 20px 0;
+	}
+	.react{
+		z-index: 2;
+	}
+}

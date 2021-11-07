@@ -11,9 +11,9 @@
 		z-index: 2;
 	}
 	&__title {
-		color:black;
+		color:white;
 		letter-spacing: 10px;
-		opacity: .6;
+		opacity: 1;
 		font-weight: 500;
 		white-space: nowrap;
 	}
@@ -29,7 +29,7 @@
 		width: 130%;
 		height: 100%;
 	
-		background: url(../img/my-stack/bg/bg.jpg)center center/cover;
+		background: url(../img/my-stack/bg/bg1.jpg)center center/cover;
 		-webkit-background-size: cover;
 		background-size: cover;
 		background-position: center;

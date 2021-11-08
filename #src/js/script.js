@@ -133,6 +133,24 @@ function screenLocker() {
 	body.classList.toggle('body-lock');
 }
 
+//======= drop list ===========
+const courseTitles = document.querySelectorAll('.about-me__course')
+
+courseTitles.forEach(e => {
+	
+	e.addEventListener('click', e => {
+
+	const textBlock = e.target.closest('.about-me__course');
+	const title = e.target.closest('.about-me__course-title-wripper');
+
+	const arrow = title.querySelector('.about-me__course-arrow');
+	const discription = textBlock.querySelector('.about-me__course-discription');
+
+	arrow.classList.toggle('active')
+	discription.classList.toggle('active')
+	}
+)})
+
 
 ////======== web-apps activate ========
 

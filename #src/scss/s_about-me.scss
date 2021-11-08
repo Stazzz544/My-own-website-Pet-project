@@ -32,6 +32,7 @@
 	}
 	&__flex-item-right-side {
 		padding: 20px;
+		width: 100%;
 	}
 
 	&__avatar-wrapper {
@@ -107,11 +108,59 @@
 	}
 
 	&__courses-title {
+		margin-top: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: rgb(95, 95, 95);
+		letter-spacing: 2px;
 	}
 
 	&__courses {
+		margin-top: 20px;
+	}
+	&__course {
+		
+	}
+	&__course-title-wripper {
+		cursor: pointer;
+		max-width: 70%;
+		display: flex;
+		justify-content: space-between;
+		
+		&:hover .about-me__course-arrow{
+			//transform: scale(1.2);
+			fill: rgb(230, 22, 22);
+		}
+	}
+	&__course-title {
+		font-size: 17px;
+		color: #5f5f5f;
+		font-weight: 600;
+	}
+	&__course-title span {
+		font-style: italic;
+	}
+	&__course-arrow {
+		width: 15px;
+		transition: all 0.5s;
+	}
+	&__course-arrow.active {
+		transform: rotate(180deg);
+	}
+	&__course-discription {
+		overflow: hidden;
+		margin-top: 10px;
+		line-height: 18px;
+		color: #5f5f5f;
+		transition: all 0.5s;
+		max-height: 0;
+	}
+	&__course-discription.active{
+		max-height: 400px;
 	}
 }
+
 
 //standart
 

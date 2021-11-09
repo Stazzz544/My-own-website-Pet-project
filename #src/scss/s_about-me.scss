@@ -8,8 +8,7 @@
 		margin-top: 120px;
 		max-width: 900px;
 		background: hsla(0, 0%, 59%, 0.394);
-		height: 1000px;
-
+		margin-bottom: 100px;
 	}
 
 	&__resume-bg {
@@ -107,15 +106,36 @@
 		margin: 0 auto;
 	}
 
-	&__courses-title {
-		margin-top: 20px;
+	&__main-page-title {
+		margin-top: 35px;
 		text-align: center;
 		text-transform: uppercase;
 		font-weight: 700;
 		color: rgb(95, 95, 95);
 		letter-spacing: 2px;
+		position: relative;
+		&::before {
+			content:'';
+			top: 50%;
+			right: 70px;
+			position: absolute;
+			width: 40px;
+			height: 2px;
+			background: rgb(95, 95, 95);
+		}
+		&::after{
+			content:'';
+			top: 50%;
+			left: 70px;
+			position: absolute;
+			width: 40px;
+			height: 2px;
+			background: rgb(95, 95, 95);
+		}
 	}
-
+	&__courses-wrapper{
+		margin-top: 30px;
+	}
 	&__courses {
 		margin-top: 20px;
 	}
@@ -124,7 +144,7 @@
 	}
 	&__course-title-wripper {
 		cursor: pointer;
-		max-width: 70%;
+		//max-width: 70%;
 		display: flex;
 		justify-content: space-between;
 		
@@ -133,10 +153,19 @@
 			fill: rgb(230, 22, 22);
 		}
 	}
+	&__course-link{
+		text-align: right;
+		display: block;
+		margin-top: 10px;
+		margin-right: 30px;
+		color: #5f5f5f;
+		font-weight: 600;
+	}
 	&__course-title {
 		font-size: 17px;
 		color: #5f5f5f;
 		font-weight: 600;
+		
 	}
 	&__course-title span {
 		font-style: italic;
@@ -151,16 +180,29 @@
 	&__course-discription {
 		overflow: hidden;
 		margin-top: 10px;
-		line-height: 18px;
+		line-height: 21px;
 		color: #5f5f5f;
 		transition: all 0.5s;
 		max-height: 0;
 	}
+	&__course-discription div{
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
 	&__course-discription.active{
 		max-height: 400px;
 	}
+	&__cursive{
+		font-style: italic;
+	}
 }
 
+//
+.bg-fixed{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
 
 //standart
 

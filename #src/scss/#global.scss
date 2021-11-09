@@ -39,6 +39,7 @@ html{
 	&__flex-element {
 		flex: 0 0 100%;
 		position: relative;
+		
 	}
 	&__img {
 		width: 100%;
@@ -51,6 +52,14 @@ html{
 		left: 0;
 	}
 };
+
+@media(min-width: 1200px) {
+	.background-image__flex-element {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
+}
 
 
 .title{

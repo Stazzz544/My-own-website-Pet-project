@@ -321,11 +321,9 @@ function postData(form) {
 				loadingFail = document.querySelector('.form__fail'),
 				loadingDarkWrapper = document.querySelector('.form__sending-wrapper'),
 				loadFormClose = document.querySelectorAll('.form__close');
-
 				
 				loadingDarkWrapper.classList.add('form__sending-wrapper_active');//затемняем фон
 				loadingProgress.classList.add('form_active');//отправка сообщения(процесс)
-
 
 				loadFormClose.forEach((e) => {
 					e.addEventListener('click', () => {

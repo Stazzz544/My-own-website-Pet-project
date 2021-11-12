@@ -75,9 +75,13 @@
 	&__contacts-discription {
 		
 	}
-
+	&__profile-title-wrapper{
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+	}
 	&__profile-title {
-
+		display: inline-block;
 	}
 
 	&__profile-discription {
@@ -149,7 +153,7 @@
 		margin-top: 30px;
 	}
 	&__courses {
-		margin-top: 20px;
+		margin-top: 8px;
 	}
 	&__course {
 		
@@ -159,7 +163,7 @@
 		display: flex;
 		justify-content: space-between;
 		
-		&:hover .about-me__course-arrow,{
+		&:hover .about-me__course-arrow{
 			fill: rgb(230, 22, 22);
 		}
 		&:hover .about-me__course-title {
@@ -179,6 +183,7 @@
 		color: #5f5f5f;
 		font-weight: 600;
 		transition: all .5s;
+		padding-right: 10px;
 		
 	}
 	&__course-title span {
@@ -188,6 +193,7 @@
 	&__course-arrow {
 		width: 15px;
 		transition: all 0.5s;
+		margin-top: 5px;
 	}
 	&__course-arrow.active {
 		transform: rotate(180deg);
@@ -223,23 +229,28 @@
 
 .resume-h2{ //profile, skills, 
 	position: relative;
-	margin-top: 20px;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
 	color: rgb(95, 95, 95);
 	letter-spacing: 2px;
-	&::before, &::after{
+	&::before {
 		content:'';
 		top: 50%;
-		left: 15px;
+		left: -60px;
 		position: absolute;
 		width: 40px;
 		height: 2px;
 		background: rgb(95, 95, 95);
 	}
 	&::after{
-		left: 205px;
+		content:'';
+		top: 50%;
+		right: -60px;
+		position: absolute;
+		width: 40px;
+		height: 2px;
+		background: rgb(95, 95, 95);
 	}
 }
 .resume-h3{//adress, email, phone, url
@@ -257,3 +268,66 @@
 
 
 //www.linkedin.com/in/StasVasilev
+
+
+@media(max-width: 900px) {
+	.about-me{
+	
+		&__flex-wrapper{
+			flex-direction: column;
+		}
+		&__resume-wrapper{
+			margin: 0 10px;
+			margin-bottom: 100px;
+			margin-top: 80px;
+
+		}
+		&__name-wrapper{
+			max-width: 100%;
+		}
+		&__course-title{
+			line-height: 25px;
+		}
+		&__course-title-wripper {
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			
+			&:hover .about-me__course-arrow,{
+				fill: #5f5f5f;;
+			}
+			&:hover .about-me__course-title {
+				color: #5f5f5f;;
+			}
+		}
+		&__contact{
+			max-width: 260px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.resume-h2{
+		line-height: 20px;
+	}
+}
+
+@media(max-width: 500px) {
+	.resume-h2{
+		max-width: 190px;
+		margin-top: 15px;
+		&::after{
+			width: 25px;
+			right: -35px;
+		}
+		&::before{
+			width: 25px;
+			left: -35px;
+		}
+	}
+
+	.about-me{
+		&__my-name{
+			line-height: 50px;
+		}
+	}
+}

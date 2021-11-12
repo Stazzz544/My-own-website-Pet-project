@@ -2240,6 +2240,20 @@ adding classes to apper status of sending message:
   height: 33px;
 }
 
+.about-me__profile-title-wrapper {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-me__profile-title {
+  display: inline-block;
+}
+
 .about-me__profile-discription {
   margin-top: 20px;
 }
@@ -2315,7 +2329,7 @@ adding classes to apper status of sending message:
 }
 
 .about-me__courses {
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .about-me__course-title-wripper {
@@ -2352,6 +2366,7 @@ adding classes to apper status of sending message:
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
+  padding-right: 10px;
 }
 
 .about-me__course-title span {
@@ -2364,6 +2379,7 @@ adding classes to apper status of sending message:
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  margin-top: 5px;
 }
 
 .about-me__course-arrow.active {
@@ -2404,7 +2420,6 @@ adding classes to apper status of sending message:
 
 .resume-h2 {
   position: relative;
-  margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
@@ -2412,11 +2427,10 @@ adding classes to apper status of sending message:
   letter-spacing: 2px;
 }
 
-.resume-h2::before,
-.resume-h2::after {
+.resume-h2::before {
   content: '';
   top: 50%;
-  left: 15px;
+  left: -60px;
   position: absolute;
   width: 40px;
   height: 2px;
@@ -2424,7 +2438,13 @@ adding classes to apper status of sending message:
 }
 
 .resume-h2::after {
-  left: 205px;
+  content: '';
+  top: 50%;
+  right: -60px;
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: #5f5f5f;
 }
 
 .resume-h3 {
@@ -2998,6 +3018,57 @@ adding classes to apper status of sending message:
   }
 }
 
+@media (max-width: 900px) {
+  .about-me__flex-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .about-me__resume-wrapper {
+    margin: 0 10px;
+    margin-bottom: 100px;
+    margin-top: 80px;
+  }
+
+  .about-me__name-wrapper {
+    max-width: 100%;
+  }
+
+  .about-me__course-title {
+    line-height: 25px;
+  }
+
+  .about-me__course-title-wripper {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .about-me__course-title-wripper:hover .about-me__course-arrow {
+    fill: #5f5f5f;
+  }
+
+  .about-me__course-title-wripper:hover .about-me__course-title {
+    color: #5f5f5f;
+  }
+
+  .about-me__contact {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resume-h2 {
+    line-height: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .menu__wrapper {
     width: 100%;
@@ -3283,6 +3354,25 @@ adding classes to apper status of sending message:
 }
 
 @media (max-width: 500px) {
+  .resume-h2 {
+    max-width: 190px;
+    margin-top: 15px;
+  }
+
+  .resume-h2::after {
+    width: 25px;
+    right: -35px;
+  }
+
+  .resume-h2::before {
+    width: 25px;
+    left: -35px;
+  }
+
+  .about-me__my-name {
+    line-height: 50px;
+  }
+
   .fuel-calculator {
     min-width: 300px;
     padding: 25px 40px;

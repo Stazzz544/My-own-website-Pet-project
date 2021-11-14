@@ -6,6 +6,7 @@
 @@include('phpmailer.js');
 @@include('swiper-bundle.js');
 @@include('react-app-page.js');
+@@include('weather-app.js');
 
 //========  swiper-slider  ========
 //swiperInit();

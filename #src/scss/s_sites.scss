@@ -1,12 +1,11 @@
 .sites{
 	display: none;
 	position: relative;
-
-
 	background-image: url('../img/my-sites/bg/bg1.jpg');
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: cover;
+	padding-bottom: 50px;
 	&__title{
 		margin-top: 40px;
 	}
@@ -75,6 +74,11 @@
 		background-image: url('../img/my-sites/galery/landingWP.jpg');
 		grid-column: 5 / 6;
 		grid-row: 4 / 7;
+	}
+	&__grid-item-8{
+		background-image: url('../img/my-sites/galery/stemford.jpg');
+		grid-column: 3 / 5;
+		grid-row: 7 / 10;
 	}
 }
 

@@ -151,7 +151,17 @@ courseTitles.forEach(e => {
 	discription.classList.toggle('active')
 	}
 )})
+////======== auto percent bars in about me page ========
 
+function percentBar(){
+	const skills = document.querySelectorAll('.about-me__skill')
+	skills.forEach(e => {
+		const percent = e.querySelector('.about-me__skill-percent').innerHTML
+		const barComplite = e.querySelector('.about-me__skill-inside-bar').style.width = percent
+	})
+}
+
+percentBar()
 
 ////======== web-apps activate ========
 

@@ -56,8 +56,15 @@ testWebP(function (support) {
 	}
 });
 
-//==================================
+//=========Auto years in resume===========
 
+getYearsFromDate ()
+
+function getYearsFromDate () {
+	const startDate = new Date(2021, 1, 03);
+	const oursFromStart = Math.floor((Date.now() - startDate) / 1000 / 60 / 60);
+	document.querySelector('#daysFromStart').textContent = oursFromStart
+}
 
 
 //======== Menu tabs and links border bottom ========

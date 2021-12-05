@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*------reset styles start-------*/
 
 * {
@@ -952,7 +954,7 @@ html {
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .menu__wrapper {
@@ -1262,6 +1264,7 @@ html {
 .contacts {
   display: none;
   position: relative;
+  padding-bottom: 50px;
 }
 
 .contacts__dark-filter {
@@ -1797,6 +1800,7 @@ adding classes to apper status of sending message:
 .react {
   display: none;
   position: relative;
+  padding-bottom: 70px;
 }
 
 .react__dark-filter {
@@ -2264,6 +2268,7 @@ adding classes to apper status of sending message:
 
 .about-me__profile-discription {
   margin-top: 20px;
+  text-align: center;
 }
 
 .about-me__my-name {
@@ -2288,6 +2293,7 @@ adding classes to apper status of sending message:
   padding: 10px 0;
   letter-spacing: 5px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .about-me__name-wrapper {
@@ -2401,9 +2407,9 @@ adding classes to apper status of sending message:
   margin-top: 10px;
   line-height: 21px;
   color: #5f5f5f;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 1.5s;
+  -o-transition: all 1.5s;
+  transition: all 1.5s;
   max-height: 0;
 }
 
@@ -2412,8 +2418,17 @@ adding classes to apper status of sending message:
   margin-bottom: 10px;
 }
 
+.about-me__profile-discription-flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .about-me__course-discription.active {
-  max-height: 400px;
+  max-height: 700px;
 }
 
 .about-me__cursive {
@@ -2468,10 +2483,83 @@ adding classes to apper status of sending message:
   border-radius: 15px 0 0 15px;
 }
 
-.bg-fixed {
-  position: fixed;
+.about-me__work-experience {
+  margin-top: 30px;
+}
+
+.about-me__work-experience-wrapper {
+  margin-top: 10px;
+}
+
+.about-me__work-experience-flex-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-me__work-experience-profession-flex,
+.about-me__work-experience-company-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 40px;
+}
+
+.about-me__work-experience-profession {
+  font-size: 17px;
+  color: #5f5f5f;
+  font-weight: 600;
+}
+
+.about-me__work-experience-company-year,
+.about-me__work-experience-company-name {
+  font-size: 17px;
+  font-style: italic;
+  color: #5f5f5f;
+}
+
+.about-me__work-experience-divider {
+  padding: 0px 10px;
+  position: relative;
+}
+
+.about-me__work-experience-divider::after {
+  content: '';
+  position: absolute;
+  width: 2px;
   height: 100%;
-  width: 100%;
+  background-color: #5f5f5f;
+}
+
+.about-me__work-experience-responsibilitys,
+.about-me__work-experience-achievementsб {
+  margin-top: 10px;
+}
+
+.about-me__work-experience-responsibility,
+.about-me__work-experience-achievement,
+.about-me__info {
+  line-height: 21px;
+  color: #5f5f5f;
+}
+
+.about-me__work-experience-achievement {
+  margin-top: 10px;
+}
+
+.about-me__info-wrapper {
+  margin-top: 30px;
+}
+
+.about-me__info {
+  margin-bottom: 30px;
 }
 
 .resume-h2 {
@@ -3174,7 +3262,7 @@ adding classes to apper status of sending message:
   color: #ffffff;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .background-image__flex-element {
     position: fixed;
     height: 100%;
@@ -3193,6 +3281,17 @@ adding classes to apper status of sending message:
 }
 
 @media (max-width: 900px) {
+  .sites {
+    background: url("../img/my-sites/bg/bg-dark.png") repeat;
+    padding-bottom: 100px;
+  }
+
+  .about-me {
+    background-image: -webkit-gradient(linear, left bottom, right top, from(#f19129), color-stop(#f1a941), color-stop(#f2bf5c), color-stop(#f4d378), color-stop(#f7e797), color-stop(#f9eb9d), color-stop(#faeea2), color-stop(#fcf2a8), color-stop(#fce795), color-stop(#fcdc83), color-stop(#fdd072), to(#ffc462));
+    background-image: -o-linear-gradient(left bottom, #f19129, #f1a941, #f2bf5c, #f4d378, #f7e797, #f9eb9d, #faeea2, #fcf2a8, #fce795, #fcdc83, #fdd072, #ffc462);
+    background-image: linear-gradient(to right top, #f19129, #f1a941, #f2bf5c, #f4d378, #f7e797, #f9eb9d, #faeea2, #fcf2a8, #fce795, #fcdc83, #fdd072, #ffc462);
+  }
+
   .about-me__flex-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3241,6 +3340,10 @@ adding classes to apper status of sending message:
   .resume-h2 {
     line-height: 20px;
   }
+
+  .background-image.hide {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3278,10 +3381,6 @@ adding classes to apper status of sending message:
 
   .burger {
     display: block;
-  }
-
-  .sites {
-    background-image: url("../img/my-sites/bg/bg720.jpg");
   }
 
   .sites__grid-container {
@@ -3539,6 +3638,13 @@ adding classes to apper status of sending message:
   }
 }
 
+@media (max-width: 532px) {
+  .about-me__work-experience-profession-flex,
+  .about-me__work-experience-company-flex {
+    height: 80px;
+  }
+}
+
 @media (max-width: 524px) {
   .footer {
     -webkit-box-orient: vertical;
@@ -3546,6 +3652,7 @@ adding classes to apper status of sending message:
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 17px 0;
+    z-index: 1000;
   }
 
   .footer__elem {
@@ -3736,31 +3843,38 @@ adding classes to apper status of sending message:
   }
 }
 
-.webp .sites { background-image: url(../img/my-sites/bg/bg1.webp); }
+@media (max-width: 340px) {
+  .about-me__work-experience-profession-flex,
+  .about-me__work-experience-company-flex {
+    height: 100px;
+  }
+}
 
-.webp .sites__grid-item-1 { background-image: url(../img/my-sites/galery/taxi.webp); }
+.webp .sites{ background-image: url(../img/my-sites/bg/bg1.webp); }
 
-.webp .sites__grid-item-2 { background-image: url(../img/my-sites/galery/landingStartup.webp); }
+.webp .sites__grid-item-1{ background-image: url(../img/my-sites/galery/taxi.webp); }
 
-.webp .sites__grid-item-3 { background-image: url(../img/my-sites/galery/smart-camera.webp); }
+.webp .sites__grid-item-2{ background-image: url(../img/my-sites/galery/landingStartup.webp); }
 
-.webp .sites__grid-item-4 { background-image: url(../img/my-sites/galery/portfolio.webp); }
+.webp .sites__grid-item-3{ background-image: url(../img/my-sites/galery/smart-camera.webp); }
 
-.webp .sites__grid-item-5 { background-image: url(../img/my-sites/galery/allotrop.webp); }
+.webp .sites__grid-item-4{ background-image: url(../img/my-sites/galery/portfolio.webp); }
 
-.webp .sites__grid-item-6 { background-image: url(../img/my-sites/galery/milroads.webp); }
+.webp .sites__grid-item-5{ background-image: url(../img/my-sites/galery/allotrop.webp); }
 
-.webp .sites__grid-item-7 { background-image: url(../img/my-sites/galery/landingWP.webp); }
+.webp .sites__grid-item-6{ background-image: url(../img/my-sites/galery/milroads.webp); }
 
-.webp .sites__grid-item-8 { background-image: url(../img/my-sites/galery/stemford.webp); }
+.webp .sites__grid-item-7{ background-image: url(../img/my-sites/galery/landingWP.webp); }
 
-.webp .contacts__input input { background: url(../img/contacts/background/1px.webp) repeat; }
+.webp .sites__grid-item-8{ background-image: url(../img/my-sites/galery/stemford.webp); }
 
-.webp .contacts__textarea textarea { background: url(../img/contacts/background/1px.webp) repeat; }
+.webp .contacts__input input{ background: url(../img/contacts/background/1px.webp) repeat; }
 
-.webp .my-stack__parallax-bg { background: url(../img/my-stack/bg/bg1.webp) center center/cover; }
+.webp .contacts__textarea textarea{ background: url(../img/contacts/background/1px.webp) repeat; }
 
-@media (max-width: 768px) {
+.webp .my-stack__parallax-bg{ background: url(../img/my-stack/bg/bg1.webp) center center/cover; }
 
-  .webp .sites { background-image: url(../img/my-sites/bg/bg720.webp); }
+@media (max-width: 900px){
+
+  .webp .sites{ background: url(../img/my-sites/bg/bg-dark.webp) repeat; }
 }

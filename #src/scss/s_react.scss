@@ -1,6 +1,7 @@
 .react {
 	display: none;
 	position: relative;
+	padding-bottom: 70px;
 	&__dark-filter{
 		background: rgba(0, 0, 0, 0.245);
 		position: absolute;
@@ -230,6 +231,7 @@
 	}
 	.react__about-app-wrapper_active{
 		margin: 60px 10px;
+		
 	}
 	.react__about-app-bg_active{
 		overflow: scroll;

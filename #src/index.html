@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <link rel="stylesheet" href="css/style.14.11.2021.css">  -->
-	<link rel="stylesheet" href="css/style.min.css?14.11.2021">
+	<link rel="stylesheet" href="css/style.min.css?05.12.2021">
 	<title>Cocodjambo!</title>
 
 </head>
@@ -50,7 +50,7 @@
 	<div class="vertical-flex-main-wrapper">
 
 
-		<section class="promo flex-grow-1 ">
+		<section class="promo flex-grow-1  section-active">
 			<div class="background-image">
 				<div class="background-image__flex-element">
 					<img class="background-image__img" src="img/promo/bg/bg.jpg" alt="forest with cloud">
@@ -547,9 +547,9 @@
 			</div>
 		</section>
 
-		<section class="about-me flex-grow-1  section-active">
+		<section class="about-me flex-grow-1">
 
-			<div class="background-image">
+			<div class="background-image hide">
 				<div class="background-image__flex-element">
 					<img class="background-image__img " src="img/about-me/bg/bg.jpg" alt="forest with cloud">
 				</div>
@@ -564,10 +564,14 @@
 									<img class="about-me__avatar-img" src="img/about-me/avatar/avatar.png" alt="avatar">
 								</div>
 							</div>
-							<div  class="about-me__profile-title-wrapper">
-								<h2 class="about-me__profile-title resume-h2">Обо мне</h2>
+							
+
+							<div class="about-me__profile-discription-flex-wrapper">
+								<p class="about-me__profile-discription resume-regular-text">Hello World! I'm Stas!</br>
+								Полюбил кодинг с первой строки.</br>
+								В IT 7 320 часов</p>
 							</div>
-							<p class="about-me__profile-discription resume-regular-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non ratione, qui quaerat maxime unde dolores doloremque obcaecati ad distinctio perferendis dignissimos praesentium quod voluptatem eius iste! Vitae corporis quidem magni.</p>
+
 							<div  class="about-me__profile-title-wrapper">
 								<h2 class="about-me__profile-title resume-h2">Контакты</h2>
 							</div>
@@ -645,9 +649,96 @@
 
 								<div class="about-me__contact">
 									<div class="about-me__contacts-icon-wrapper">
-										<svg class="about-me__contacts-icon" enable-background="new 0 0 1024 1024" height="1024px" id="Layer_1" version="1.1" viewBox="0 0 1024 1024" width="1024px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Background"><path d="M983.766,312.727c-25.785-60.972-62.694-115.728-109.705-162.744   C827.05,102.966,772.299,66.049,711.329,40.257C648.194,13.548,581.14,0.004,512,0c-69.104,0-136.155,13.54-199.289,40.243   c-60.969,25.787-115.721,62.699-162.735,109.71c-47.014,47.011-83.929,101.761-109.72,162.728   C13.548,375.814,0.004,442.865,0,511.97c-0.004,69.109,13.533,136.165,40.234,199.304   c25.785,60.973,62.696,115.728,109.707,162.743c47.011,47.018,101.762,83.935,162.732,109.727   c63.136,26.708,130.19,40.253,199.323,40.257h0.009c69.104,0,136.153-13.54,199.288-40.243   c60.969-25.787,115.72-62.699,162.733-109.709c47.013-47.01,83.929-101.76,109.72-162.728   c26.708-63.134,40.251-130.186,40.255-199.29C1024.004,442.921,1010.467,375.866,983.766,312.727z M512.004,976.328h-0.03   c-124.026-0.007-240.627-48.313-328.323-136.019C95.957,752.604,47.665,635.999,47.672,511.973   c0.015-256.016,208.312-464.3,464.356-464.3c124.026,0.007,240.626,48.312,328.32,136.017   c87.695,87.706,135.986,204.311,135.979,328.337C976.313,768.043,768.018,976.328,512.004,976.328z" /></g><g id="VK"><path d="M154.504,399.328c7.7,20.099,17.191,39.48,26.987,58.622   c23.277,45.48,47.248,89.673,79.387,129.647c32.479,40.396,70.825,79.544,115.996,105.676c12.563,7.268,25.77,13.4,39.527,18.061   c53.079,17.979,111.295,16.267,129.273,4.281c17.979-11.986-3.424-90.75,12.842-100.167c16.267-9.418,45.375,11.13,66.777,29.965   c21.403,18.834,37.669,35.1,49.656,47.942c7.506,8.042,12.79,17.64,22.575,23.376c16.186,9.486,37.753,8.435,55.808,8.485   c10.065,0.029,20.133,0.063,30.199-0.063c6.803-0.084,13.608,0.136,20.406-0.193c11.171-0.542,25.779-4.952,24.941-18.927   c-0.198-3.304-0.931-7.256-2.244-10.306c-2.822-6.555-6.797-13.357-11.069-19.067c-22.258-29.75-37.026-44.946-48.155-56.933   c-11.13-11.984-56.933-55.22-59.929-63.78c-2.996-8.562-3.96-12.36,4.548-23.918c8.508-11.559,27.129-40.72,41.684-61.694   c9.128-13.155,17.42-26.91,25.612-40.659c9.659-16.21,18.743-32.813,26.485-50.029c3.462-7.698,6.604-14.711,4.46-23.337   c-1.437-5.779-4.687-10.856-10.739-12.282c-3.304-0.778-6.909-0.857-10.29-0.857c-12.627,0-45.589,0-45.589,0   c-5.958,0-11.917-0.087-17.876-0.076c-6.109,0.011-12.269-0.037-18.36,0.485c-8.666,0.742-13.977,7.425-18.336,14.163   c-5.333,8.245-10.187,16.823-15.36,25.172c-3.537,5.705-6.998,11.455-10.397,17.243c-5.312,9.04-10.784,17.983-16.256,26.927   c-2.271,3.71-4.55,7.416-6.789,11.146c-6.421,10.699-62.069,83.898-73.198,86.896s-14.982,2.142-14.982-20.547   c0-22.687,0-151.533,0-151.533s-0.854-9.935-10.272-9.935s-53.099,0-53.099,0h-90.09c0,0-21.188,0.088-13.697,19.138   c7.491,19.049,29.644,24.828,29.644,56.611c0,31.782,0,124.565,0,124.565s-3.745,27.931-27.931,4.815   c-19.059-18.215-34.762-39.751-48.637-62.081c-14.426-23.215-26.048-47.333-36.4-72.602c-2.961-7.227-5.893-14.466-8.934-21.659   c-3.174-7.509-6.319-15.031-9.363-22.593c-3.535-8.784-7.317-20.265-16.849-24.309c-4.792-2.033-10.092-1.933-15.2-1.932   c-18.943,0.005-37.885,0.058-56.827,0.022c-5.558-0.01-11.116-0.016-16.674-0.002c-13.123,0.031-29.445-0.356-32.558,16.038   c-1.794,9.443,1.772,19.523,4.757,28.367C151.321,391.511,152.99,395.375,154.504,399.328z"  id="Vk"/></g></svg>
+										<svg class="about-me__contacts-icon"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   xml:space="preserve"
+   width="266.66666"
+   height="266.66666"
+   viewBox="0 0 266.66666 266.66666"
+   sodipodi:docname="min-hh-red.eps"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath20"><path
+         d="m 1000,0 c 552.29,0 1000,447.715 1000,1000 0,552.29 -447.71,1000 -1000,1000 C 447.715,2000 0,1552.29 0,1000 0,447.715 447.715,0 1000,0 Z"
+         clip-rule="evenodd"
+         id="path18" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26"><path
+         d="M 0,0 H 2000 V 2000 H 0 Z"
+         id="path24" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath36"><path
+         d="m 558.785,1471.29 v -340.15 c 51.766,61.72 113.844,92.82 185.844,92.82 37.098,0 70.312,-7.06 100.078,-21.14 29.883,-13.96 52.234,-31.88 67.293,-53.61 15.176,-21.96 25.41,-46 30.941,-72.5 5.528,-26.36 8.274,-67.42 8.274,-123.062 V 589.922 H 790.273 v 327.566 c 0,65.024 -2.902,106.202 -9.019,123.692 -6.117,17.61 -16.863,31.45 -32.313,41.64 -15.492,10.47 -34.785,15.65 -58.078,15.65 -26.629,0 -50.59,-6.7 -71.371,-19.92 -21.219,-13.34 -36.512,-33.26 -46.16,-59.88 C 563.488,992 558.59,952.629 558.785,900.512 L 558.59,589.922 H 397.883 v 881.368 h 160.902"
+         clip-rule="evenodd"
+         id="path34" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath42"><path
+         d="M 0,0 H 2000 V 2000 H 0 Z"
+         id="path40" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath52"><path
+         d="m 1192.39,1471.29 v -340.15 c 51.81,61.72 113.84,92.82 185.84,92.82 36.95,0 70.36,-7.06 100.24,-21.14 29.73,-13.96 52.08,-31.88 67.1,-53.61 15.18,-21.96 25.45,-46 30.94,-72.5 5.53,-26.36 8.28,-67.42 8.28,-123.062 V 589.922 h -160.75 v 327.566 c 0,65.024 -3.02,106.202 -9.18,123.692 -6.11,17.61 -16.82,31.45 -32.35,41.64 -15.33,10.47 -34.78,15.65 -58.08,15.65 -26.63,0 -50.55,-6.7 -71.37,-19.92 -20.98,-13.34 -36.31,-33.26 -46.12,-59.88 -9.65,-26.67 -14.55,-66.041 -14.55,-118.158 v -310.59 h -160.74 v 881.368 h 160.74"
+         clip-rule="evenodd"
+         id="path50" /></clipPath><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath58"><path
+         d="M 0,0 H 2000 V 2000 H 0 Z"
+         id="path56" /></clipPath></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview4" /><g
+     id="g10"
+     inkscape:groupmode="layer"
+     inkscape:label="ink_ext_XXXXXX"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,266.66667)"><g
+       id="g12"
+       transform="scale(0.1)"><g
+         id="g14"><g
+           id="g16"
+           clip-path="url(#clipPath20)"><g
+             id="g22"
+             clip-path="url(#clipPath26)"><path
+               d="M -100,-100 H 2100 V 2100 H -100 Z"
+              
+               id="path28" /></g></g></g><g
+         id="g30"><g
+           id="g32"
+           clip-path="url(#clipPath36)"><g
+             id="g38"
+             clip-path="url(#clipPath42)"><path
+               d="m 297.883,489.922 h 753.332 v 1081.37 H 297.883 Z"
+               style="fill:#fffffe;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path44" /></g></g></g><g
+         id="g46"><g
+           id="g48"
+           clip-path="url(#clipPath52)"><g
+             id="g54"
+             clip-path="url(#clipPath58)"><path
+               d="m 931.648,489.922 h 753.137 v 1081.37 H 931.648 Z"
+               style="fill:#fffffe;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="path60" /></g></g></g></g></g>
+										</svg>
 									</div>
-									<a target="_blank"  href="https://vk.com/ceasar" class="about-me__contacts-discription resume-regular-text">https://vk.com/ceasar</a>
+									<a target="_blank" href="https://spb.hh.ru/applicant/resumes/view?resume=4ec81664ff096a24390039ed1f463070437a72" class="about-me__contacts-discription resume-regular-text">HeadHunter</a>
 								</div>
 
 								<div class="about-me__contact">
@@ -670,6 +761,14 @@
 									</div>
 									<a target="_blank" href="https://www.instagram.com/Stas_traveler" class="about-me__contacts-discription resume-regular-text">instagram.com/Stas_traveler/</a>
 								</div>
+
+								<div class="about-me__contact">
+									<div class="about-me__contacts-icon-wrapper">
+										<svg class="about-me__contacts-icon" enable-background="new 0 0 1024 1024" height="1024px" id="Layer_1" version="1.1" viewBox="0 0 1024 1024" width="1024px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Background"><path d="M983.766,312.727c-25.785-60.972-62.694-115.728-109.705-162.744   C827.05,102.966,772.299,66.049,711.329,40.257C648.194,13.548,581.14,0.004,512,0c-69.104,0-136.155,13.54-199.289,40.243   c-60.969,25.787-115.721,62.699-162.735,109.71c-47.014,47.011-83.929,101.761-109.72,162.728   C13.548,375.814,0.004,442.865,0,511.97c-0.004,69.109,13.533,136.165,40.234,199.304   c25.785,60.973,62.696,115.728,109.707,162.743c47.011,47.018,101.762,83.935,162.732,109.727   c63.136,26.708,130.19,40.253,199.323,40.257h0.009c69.104,0,136.153-13.54,199.288-40.243   c60.969-25.787,115.72-62.699,162.733-109.709c47.013-47.01,83.929-101.76,109.72-162.728   c26.708-63.134,40.251-130.186,40.255-199.29C1024.004,442.921,1010.467,375.866,983.766,312.727z M512.004,976.328h-0.03   c-124.026-0.007-240.627-48.313-328.323-136.019C95.957,752.604,47.665,635.999,47.672,511.973   c0.015-256.016,208.312-464.3,464.356-464.3c124.026,0.007,240.626,48.312,328.32,136.017   c87.695,87.706,135.986,204.311,135.979,328.337C976.313,768.043,768.018,976.328,512.004,976.328z" /></g><g id="VK"><path d="M154.504,399.328c7.7,20.099,17.191,39.48,26.987,58.622   c23.277,45.48,47.248,89.673,79.387,129.647c32.479,40.396,70.825,79.544,115.996,105.676c12.563,7.268,25.77,13.4,39.527,18.061   c53.079,17.979,111.295,16.267,129.273,4.281c17.979-11.986-3.424-90.75,12.842-100.167c16.267-9.418,45.375,11.13,66.777,29.965   c21.403,18.834,37.669,35.1,49.656,47.942c7.506,8.042,12.79,17.64,22.575,23.376c16.186,9.486,37.753,8.435,55.808,8.485   c10.065,0.029,20.133,0.063,30.199-0.063c6.803-0.084,13.608,0.136,20.406-0.193c11.171-0.542,25.779-4.952,24.941-18.927   c-0.198-3.304-0.931-7.256-2.244-10.306c-2.822-6.555-6.797-13.357-11.069-19.067c-22.258-29.75-37.026-44.946-48.155-56.933   c-11.13-11.984-56.933-55.22-59.929-63.78c-2.996-8.562-3.96-12.36,4.548-23.918c8.508-11.559,27.129-40.72,41.684-61.694   c9.128-13.155,17.42-26.91,25.612-40.659c9.659-16.21,18.743-32.813,26.485-50.029c3.462-7.698,6.604-14.711,4.46-23.337   c-1.437-5.779-4.687-10.856-10.739-12.282c-3.304-0.778-6.909-0.857-10.29-0.857c-12.627,0-45.589,0-45.589,0   c-5.958,0-11.917-0.087-17.876-0.076c-6.109,0.011-12.269-0.037-18.36,0.485c-8.666,0.742-13.977,7.425-18.336,14.163   c-5.333,8.245-10.187,16.823-15.36,25.172c-3.537,5.705-6.998,11.455-10.397,17.243c-5.312,9.04-10.784,17.983-16.256,26.927   c-2.271,3.71-4.55,7.416-6.789,11.146c-6.421,10.699-62.069,83.898-73.198,86.896s-14.982,2.142-14.982-20.547   c0-22.687,0-151.533,0-151.533s-0.854-9.935-10.272-9.935s-53.099,0-53.099,0h-90.09c0,0-21.188,0.088-13.697,19.138   c7.491,19.049,29.644,24.828,29.644,56.611c0,31.782,0,124.565,0,124.565s-3.745,27.931-27.931,4.815   c-19.059-18.215-34.762-39.751-48.637-62.081c-14.426-23.215-26.048-47.333-36.4-72.602c-2.961-7.227-5.893-14.466-8.934-21.659   c-3.174-7.509-6.319-15.031-9.363-22.593c-3.535-8.784-7.317-20.265-16.849-24.309c-4.792-2.033-10.092-1.933-15.2-1.932   c-18.943,0.005-37.885,0.058-56.827,0.022c-5.558-0.01-11.116-0.016-16.674-0.002c-13.123,0.031-29.445-0.356-32.558,16.038   c-1.794,9.443,1.772,19.523,4.757,28.367C151.321,391.511,152.99,395.375,154.504,399.328z"  id="Vk"/></g></svg>
+									</div>
+									<a target="_blank"  href="https://vk.com/ceasar" class="about-me__contacts-discription resume-regular-text">vk.com/ceasar</a>
+								</div>
+
 
 							</div>
 
@@ -805,7 +904,40 @@
 							</div>
 
 							<div  class="about-me__profile-title-wrapper">
-								<h2 class="about-me__profile-title resume-h2">Курсы, которые я окончил</h2>
+								<h2 class="about-me__profile-title resume-h2">обо мне</h2>
+							</div>
+
+							<div class="about-me__info-wrapper">
+								<div class="about-me__info">
+									<p>Привет, я Стас!</p>
+									<p>
+										В 31 год я принял решение полностью изменить поле деятельности и мое внимание привлекла сфера IT.
+										Стало интересно - как сделать сайт с нуля? Почему на экранах компьютера и телефона один и тот же сайт смотрится по разному?
+										Я начал активно изучать верстку и уже через пару месяцев понял, что хочу погрузиться глубже.
+									</p>
+									<p>Так начался мой путь в IT!</p>
+									</br>
+									<p>
+									За время обучения убедился, что мне наиболее интересна сфера Frontend-разработки, и на текущий момент продолжаю углубленно изучать нативный JavaScript, React и библиотеки для работы с ним. 
+									<p>
+										Серьезно нацелен на дальнейшее развитие своих навыков и их применения в сфере IT.
+										Придерживаюсь принципа "не откладывай на завтра, то что можно сделать сегодня".
+										Ответственно подхожу  как к выполнению задания, так и к срокам его сдачи.
+									</p>
+									<p>Люблю и умею быстро обучаться, расширять свои границы и это помогает мне сохранять мотивацию на пути к цели.
+									</p>
+									<p>
+										В свободное время я люблю путешествовать, читать статьи на HABR, спорт (треккинг, хайкинг), изучать английский язык.
+									</p>
+
+
+
+								</div>
+							</div>
+
+
+							<div  class="about-me__profile-title-wrapper">
+								<h2 class="about-me__profile-title resume-h2">Пройденные курсы</h2>
 							</div>
 
 							<div class="about-me__courses-wrapper">
@@ -933,8 +1065,53 @@
 							</div>
 
 							<div  class="about-me__profile-title-wrapper">
-								<h2 class="about-me__my-name">эта часть сайта находится в разработке...</h2>
+								<h2 class="about-me__profile-title resume-h2">Опыт работы</h2>
 							</div>
+
+							<div class="about-me__work-experience">
+								<div class="about-me__work-experience-wrapper">
+
+									<div class="about-me__work-experience-flex-wrapper">
+										<div class="about-me__work-experience-profession-flex">
+											<div class="about-me__work-experience-profession">HTML-верстальщик</div>
+											<div class="about-me__work-experience-profession">Frontend Developer</div>
+										</div>
+
+										<div class="about-me__work-experience-divider"></div>
+
+										<div class="about-me__work-experience-company-flex">
+											<div class="about-me__work-experience-company-year">2021</div>
+											<div class="about-me__work-experience-company-name">ИП Дубкова Ольга Игоревна</div>
+										</div>
+									</div>
+
+									<ul class="about-me__work-experience-responsibilitys">
+										<li class="about-me__work-experience-responsibility">-доработка действующего сайта</li>
+										<li class="about-me__work-experience-responsibility">-настройка автоматической email рассылки для посетителей сайта</li>
+										<li class="about-me__work-experience-responsibility">-верстка HTML писем</li>
+										<li class="about-me__work-experience-responsibility">-разработка адаптивных кроссбраузерных сайтов с нуля с применением JavaScript библиотек</li>
+										<li class="about-me__work-experience-responsibility">-разработка сайтов с использованием макетов Figma и PSD</li>
+										<li class="about-me__work-experience-responsibility">-рефакторинг legacy кода</li>
+										<li class="about-me__work-experience-responsibility">-работа с системой контроля версий Git</li>
+										<li class="about-me__work-experience-responsibility">-deploy сайта</li>
+									</ul>
+
+								</div>
+							</div>
+
+							<div  class="about-me__profile-title-wrapper">
+								<h2 class="about-me__profile-title resume-h2">Достижения</h2>
+							</div>
+
+							<ul class="about-me__work-experience-achievements">
+								<li class="about-me__work-experience-achievement">-Реализовал несколько проектов для компании АНО "еНано" (ознакомиться с проектами можно на моем сайте http://cocodjambo.ru/ ).</li>
+								<li class="about-me__work-experience-achievement">-В ходе работы над проектами применял такие библиотеки как : SwiperJS, WowJS, Slick-slider, Axios, Validate.JS, fullPage.JS и Rellax.JS .</li>
+								<li class="about-me__work-experience-achievement">-Для сборки сайтов, ускорения разработки и ее оптимизации использовал task-менеджер GULP и препроцессор SCSS.</li>
+								<li class="about-me__work-experience-achievement">-Написал ряд простых web-приложений на нативном языке программирования JavaScript (ознакомиться и протестировать можно также на моем сайте http://cocodjambo.ru/ ).
+								<li class="about-me__work-experience-achievement">-Сверстал суммарно более 10 сайтов (адаптивная кросбраузерная верстка) и ряд HTML-писем.</li>
+								<li class="about-me__work-experience-achievement">-Написал 2 web-приложения с использованием библиотеки ReactJS.</li>
+							</ul>
+
 						</div>
 					</div>
 				</div>
@@ -1098,7 +1275,7 @@
 
 
 	</div>
-	<script src="js/script.js?14.11.2021"></script>
+	<script src="js/script.js?05.12.2021"></script>
 </body>
 
 </html>

@@ -26,6 +26,7 @@
 	.footer{
 		flex-direction: column;
 		padding: 17px 0;
+		z-index: 1000;
 		
 		&__elem{
 			margin-top: 5px;

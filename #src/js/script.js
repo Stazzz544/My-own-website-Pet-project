@@ -62,8 +62,31 @@ getYearsFromDate ()
 
 function getYearsFromDate () {
 	const startDate = new Date(2021, 1, 03);
-	const oursFromStart = Math.floor((Date.now() - startDate) / 1000 / 60 / 60);
-	document.querySelector('#daysFromStart').textContent = oursFromStart
+	const hoursFromStart = Math.floor((Date.now() - startDate) / 1000 / 60 / 60 );
+	document.querySelector('#daysFromStart').textContent = hoursFromStart
+
+	const numToString = hoursFromStart + ''
+	const twoLastNum = numToString.slice(-2)
+	const span = document.querySelector('#hours')
+
+	outOurWordInSpan(twoLastNum, span)
+}
+
+function outOurWordInSpan(twoLastNum, span){
+	if (twoLastNum == 0 || twoLastNum >=5 && twoLastNum <=20) {
+		span.textContent = 'часов'
+		return true
+	} else if(twoLastNum >= 2 && twoLastNum <= 4) {
+		span.textContent = 'часа'
+		return true
+	} else if(twoLastNum == 1 || twoLastNum == 21) {
+		span.textContent = 'час'
+		return true
+	} else {
+		const smallNum = twoLastNum % 10
+		outOurWordInSpan(smallNum, span)
+	}
+	
 }
 
 

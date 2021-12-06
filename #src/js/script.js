@@ -55,6 +55,18 @@ testWebP(function (support) {
 		document.querySelector('body').classList.add('no-webp');
 	}
 });
+//=========Main preloader=========
+window.onload = () => {
+	document.querySelector('#mainPreloader').classList.add('fadeOut');
+	
+	setTimeout(() => {
+		document.querySelector('#mainPreloader').style = 'display:none';
+		document.querySelector('body').classList.add('firstLoad');
+		document.querySelector('footer').classList.remove('hidden');
+	}, 1000);
+	
+}
+
 
 //=========Auto years in resume===========
 
@@ -63,11 +75,11 @@ getYearsFromDate ()
 function getYearsFromDate () {
 	const startDate = new Date(2021, 1, 03);
 	const hoursFromStart = Math.floor((Date.now() - startDate) / 1000 / 60 / 60 );
-	document.querySelector('#daysFromStart').textContent = hoursFromStart
+	document.querySelector('#daysFromStart').textContent = hoursFromStart;
 
-	const numToString = hoursFromStart + ''
-	const twoLastNum = numToString.slice(-2)
-	const span = document.querySelector('#hours')
+	const numToString = hoursFromStart + '';
+	const twoLastNum = numToString.slice(-2);
+	const span = document.querySelector('#hours');
 
 	outOurWordInSpan(twoLastNum, span)
 }

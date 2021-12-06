@@ -10,6 +10,26 @@
 		opacity: .6;
 		font-weight: 500;
 	}
+	&__clouds-bg1, &__clouds-bg2, &__clouds-bg3{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('../img/promo/bg/clouds.png');
+	}
+	&__clouds-bg1 {
+		opacity: 0.2;
+		animation: anim1 190s linear infinite;
+	}
+	&__clouds-bg2 {
+		opacity: 0.5;
+		animation: anim2 120s linear infinite;
+	}
+	&__clouds-bg3 {
+		opacity: 0.7;
+		animation: anim3 150s linear infinite;
+	}
 }
 
 @media(max-width: 550px) {
@@ -19,4 +39,19 @@
 			margin-top: 40px;
 		}
 	}
+}
+
+@keyframes anim1{
+	0%{background-position: 0px}
+	100%{background-position: 5440px}
+}
+
+@keyframes anim2{
+	0%{background-position: 5000px}
+	100%{background-position: 5440px}
+}
+
+@keyframes anim3{
+	0%{background-position: 1000px}
+	100%{background-position: 5440px}
 }

@@ -5,6 +5,13 @@
 	animation-fill-mode: forwards;
 };
 
+.firstLoad{
+	display: block;
+	animation: 3s fadeIn;
+	animation-fill-mode: forwards;
+	overflow: visible;
+};
+
 @keyframes fadeIn {
 	0% {
 	  opacity: 0;

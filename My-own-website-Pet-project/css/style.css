@@ -3434,7 +3434,6 @@ body {
           animation: 3s fadeIn;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  overflow: visible;
 }
 
 @-webkit-keyframes fadeIn {

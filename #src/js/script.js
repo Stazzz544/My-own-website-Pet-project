@@ -62,6 +62,8 @@ window.onload = () => {
 	setTimeout(() => {
 		document.querySelector('#mainPreloader').style = 'display:none';
 		document.querySelector('body').classList.add('firstLoad');
+		document.querySelector('body').style = 'overflow: visible;';
+		
 		document.querySelector('footer').classList.remove('hidden');
 	}, 1000);
 	

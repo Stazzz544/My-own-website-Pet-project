@@ -177,5 +177,7 @@ function timeNormalize (timezone) {
 }
 
 
-getWeather();
+
+
+document.querySelector('#weatherGetDataFirstTime').onclick = getWeather;
 document.querySelector('#weather-app-city').onchange = getWeather;

@@ -75,7 +75,20 @@ html{
 	margin: 0 auto;
 }
 
-//=====================================
+//==========scrollbar===========
+::-webkit-scrollbar {
+	width: 10px
+}
+::-webkit-scrollbar-track{
+	background: #292929
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #474747;
+	border-radius: 15px;
+}
+
+
 //==========RE-USIBLE CLASSES==========
 .flex-grow-1{
 	flex-grow: 1;

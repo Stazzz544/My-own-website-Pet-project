@@ -143,7 +143,7 @@ function dateToDisplay (dateParam, date) {
 	month = lessThen10(month);
 	day = lessThen10(day);
 
-	date.innerHTML = `Today is: <span>${day}.${month}.${dateParam.getFullYear()}</span>`;
+	date.innerHTML = `Today is: <span>${day}.${+month+1}.${dateParam.getFullYear()}</span>`;
 }
 
 

@@ -25,10 +25,16 @@
 	}
 
 	&__sidebar-item{
+		display: block;
 		margin-top: 20px;
 		color: #ffffff9f;
 		font-size: 20px;
 		cursor: pointer;
+		transition: 0.3s all;
+	}
+
+	&__sidebar-item:hover{
+		color: #fff;
 	}
 	
 	&__sidebar-panel{

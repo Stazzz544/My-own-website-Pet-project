@@ -1271,7 +1271,8 @@ html {
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
+  background-attachment: fixed;
 }
 
 .sites__title {
@@ -1745,10 +1746,18 @@ adding classes to apper status of sending message:
 }
 
 .web-apps__sidebar-item {
+  display: block;
   margin-top: 20px;
   color: #ffffff9f;
   font-size: 20px;
   cursor: pointer;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.web-apps__sidebar-item:hover {
+  color: #fff;
 }
 
 .web-apps__sidebar-panel {

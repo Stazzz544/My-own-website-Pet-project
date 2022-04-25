@@ -2674,6 +2674,15 @@ adding classes to apper status of sending message:
   margin-top: 10px;
 }
 
+.about-me__work-experience-achievement div {
+  margin-top: 10px;
+}
+
+.about-me__work-experience-achievement-img {
+  display: inline-block;
+  margin-left: 10px;
+}
+
 .about-me__info-wrapper {
   margin-top: 30px;
 }
@@ -4096,6 +4105,10 @@ body {
   .about-me__work-experience-profession-flex,
   .about-me__work-experience-company-flex {
     height: 100px;
+  }
+
+  .about-me__work-experience-achievement-img {
+    margin-left: 0px;
   }
 }
 

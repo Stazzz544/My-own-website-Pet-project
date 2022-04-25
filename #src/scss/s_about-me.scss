@@ -316,6 +316,16 @@
 		margin-top: 10px;
 	}
 
+	&__work-experience-achievement div{
+		margin-top: 10px;
+	}
+	
+	
+	&__work-experience-achievement-img{
+		display: inline-block;
+		margin-left: 10px;
+	}
+
 	&__info-wrapper{
 		margin-top: 30px;
 	}
@@ -323,10 +333,6 @@
 	&__info{
 		margin-bottom: 30px;
 	}
-
-
-
-
 }
 
 
@@ -449,5 +455,8 @@
 @media(max-width: 340px) {
 	.about-me__work-experience-profession-flex, .about-me__work-experience-company-flex{
 		height: 100px
+	}
+	.about-me__work-experience-achievement-img{
+		margin-left: 0px;
 	}
 }

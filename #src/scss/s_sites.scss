@@ -80,12 +80,17 @@
 	}
 	&__grid-item-8{
 		background-image: url('../img/my-sites/galery/stemford.jpg');
-		grid-column: 3 / 5;
+		grid-column: 3 / 4;
 		grid-row: 7 / 10;
 	}
 	&__grid-item-9{
 		background-image: url('../img/my-sites/galery/moont.ru.jpg');
 		grid-column: 1 / 3;
+		grid-row: 7 / 10;
+	}
+    &__grid-item-10{
+		background-image: url('../img/my-sites/galery/dogFriendly.jpg');
+		grid-column: 4 / 6;
 		grid-row: 7 / 10;
 	}
 }
